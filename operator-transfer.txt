@@ -194,7 +194,7 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
      ----------------------------------------------------------------
 
      -------------------------------------------
-     | post-migration     | post-publish       |
+     | post-publish       | post-migration     |
      -------------------------------------------
      |  Parent:           | Parent:            |
      |   NS_B             |  NS_B              |

@@ -100,7 +100,7 @@ F> |  RRSIG_K_A(DNSKEY) |  RRSIG_K_A(DNSKEY) |  RRSIG_K_A(DNSKEY) |
 F> ----------------------------------------------------------------
 F>
 F> -------------------------------------------
-F> | post-migration     | post-publish       |
+F> | post-publish       | post-migration     |
 F> -------------------------------------------
 F> |  Parent:           | Parent:            |
 F> |   NS_B             |  NS_B              |
