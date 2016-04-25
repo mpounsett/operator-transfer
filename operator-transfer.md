@@ -111,7 +111,7 @@ F> | Signed by B:       | Signed by B:       |
 F> |  SOA_A2            |  SOA_B0            |
 F> |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |
 F> |                    |                    |
-F> |  NS_A              |                    |
+F> |                    |                    |
 F> |  NS_B              |  NS_B              |
 F> |  RRSIG_Z_B(NS)     |  RRSIG_Z_B(NS)     |
 F> |                    |                    |
