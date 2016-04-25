@@ -10,7 +10,7 @@ Expires: October 24, 2016
 
 
    Change of Operator Procedures for DNSSEC with Automated Publishing
-                draft-pounsett-6781-for-automated-zones
+             draft-pounsett-transfers-for-busy-DNSSEC-zones
 
 Abstract
 
