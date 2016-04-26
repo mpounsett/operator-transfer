@@ -102,7 +102,10 @@ F> |  DNSKEY_K_A        |  DNSKEY_K_A        |  DNSKEY_K_A        |
 F> |                    |  DNSKEY_K_B        |  DNSKEY_K_B        |
 F> |  RRSIG_K_A(DNSKEY) |  RRSIG_K_A(DNSKEY) |  RRSIG_K_A(DNSKEY) |
 F> ----------------------------------------------------------------
-F>
+F> ~~~~
+F> Figure: Rollover for Cooperating Operators, Steps 1-3
+
+F> ~~~~ ascii-art
 F> ----------------------------------------------------------------
 F> | signing-migration  | re-delegation II   | post-migration     |
 F> ----------------------------------------------------------------
@@ -130,6 +133,6 @@ F> |  DNSKEY_K_B        |  DNSKEY_K_B        |  DNSKEY_K_B        |
 F> |  RRSIG_K_B(DNSKEY) |  RRSIG_K_B(DNSKEY) |  RRSIG_K_B(DNSKEY) |
 F> ----------------------------------------------------------------
 F> ~~~~
-F> Figure: Rollover for Cooperating Operators
+F> Figure: Rollover for Cooperating Operators, Steps 4-6
 
 {backmatter}

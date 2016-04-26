@@ -153,6 +153,23 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
      |  RRSIG_K_A(DNSKEY) |  RRSIG_K_A(DNSKEY) |  RRSIG_K_A(DNSKEY) |
      ----------------------------------------------------------------
 
+               Rollover for Cooperating Operators, Steps 1-3
+
+
+
+
+
+
+
+
+
+
+
+Pounsett                Expires October 24, 2016                [Page 3]
+
+Internet-Draft   Change of Operator for Automated Zones       April 2016
+
+
      ----------------------------------------------------------------
      | signing-migration  | re-delegation II   | post-migration     |
      ----------------------------------------------------------------
@@ -162,14 +179,6 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
      |   DS_A             |                    |                    |
      |   DS_B             |  DS_B              |  DS_B              |
      ----------------------------------------------------------------
-
-
-
-Pounsett                Expires October 24, 2016                [Page 3]
-
-Internet-Draft   Change of Operator for Automated Zones       April 2016
-
-
      | Published by A     | Published by A     | Published by B     |
      | Signed by B        | Signed by B        | Signed by B        |
      ----------------------------------------------------------------
@@ -188,7 +197,7 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
      |  RRSIG_K_B(DNSKEY) |  RRSIG_K_B(DNSKEY) |  RRSIG_K_B(DNSKEY) |
      ----------------------------------------------------------------
 
-                    Rollover for Cooperating Operators
+               Rollover for Cooperating Operators, Steps 4-6
 
 3.  Informative References
 
@@ -203,15 +212,6 @@ Author's Address
    Rightside Group, Ltd.
 
    Email: matt@conundrum.com
-
-
-
-
-
-
-
-
-
 
 
 
