@@ -68,8 +68,8 @@ Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Changing Between Cooperating DNS Operators  . . . . . . . . .   2
-   3.  Informative References  . . . . . . . . . . . . . . . . . . .   5
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   5
+   3.  Informative References  . . . . . . . . . . . . . . . . . . .   4
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   4
 
 1.  Introduction
 
@@ -126,50 +126,6 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
    gaining operator is operator B.  Records representig data generated
    by each operator are appended with the operator letter.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Pounsett                Expires October 24, 2016                [Page 3]
-
-Internet-Draft   Change of Operator for Automated Zones       April 2016
-
-
      ----------------------------------------------------------------
      | initial            | pre-publish        | re-delegation      |
      ----------------------------------------------------------------
@@ -177,8 +133,10 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
      |  NS_A              |  NS_A              |  NS_B              |
      |  DS_A              |  DS_A              |  DS_B              |
      ----------------------------------------------------------------
-     | Published by A:    | Published by A:    | Published by A:    |
-     | Signed by A:       | Signed by A:       | Signed by A:       |
+     | Published by A     | Published by A     | Published by A     |
+     | Signed by A        | Signed by A        | Signed by A        |
+     ----------------------------------------------------------------
+     | Child:             | Child:             | Child:             |
      |  SOA_A0            |  SOA_A1            |  SOA_A1            |
      |  RRSIG_Z_A(SOA)    |  RRSIG_Z_A(SOA)    |  RRSIG_Z_A(SOA)    |
      |                    |                    |                    |
@@ -200,8 +158,18 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
      |   NS_B             |  NS_B              |
      |   DS_B             |  DS_B              |
      -------------------------------------------
-     | Published by A:    | Published by B:    |
-     | Signed by B:       | Signed by B:       |
+     | Published by A     | Published by B     |
+     | Signed by B        | Signed by B        |
+     -------------------------------------------
+     | Child:             | Child:             |
+
+
+
+Pounsett                Expires October 24, 2016                [Page 3]
+
+Internet-Draft   Change of Operator for Automated Zones       April 2016
+
+
      |  SOA_A2            |  SOA_B0            |
      |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |
      |                    |                    |
@@ -217,14 +185,6 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
      -------------------------------------------
 
                     Rollover for Cooperating Operators
-
-
-
-
-Pounsett                Expires October 24, 2016                [Page 4]
-
-Internet-Draft   Change of Operator for Automated Zones       April 2016
-
 
 3.  Informative References
 
@@ -261,20 +221,4 @@ Author's Address
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Pounsett                Expires October 24, 2016                [Page 5]
+Pounsett                Expires October 24, 2016                [Page 4]
