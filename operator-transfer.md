@@ -122,7 +122,7 @@ F> | Child:             | Child:             | Child:             |
 F> |  SOA_A2            |  SOA_B0            |  SOA_B0            |
 F> |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |
 F> |                    |                    |                    |
-F> |                    |                    |                    |
+F> |  NS_A              |  NS_A              |                    |
 F> |  NS_B              |  NS_B              |  NS_B              |
 F> |  RRSIG_Z_B(NS)     |  RRSIG_Z_B(NS)     |  RRSIG_Z_B(NS)     |
 F> |                    |                    |                    |
