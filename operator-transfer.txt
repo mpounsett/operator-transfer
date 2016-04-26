@@ -183,7 +183,7 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
      | Signed by B        | Signed by B        | Signed by B        |
      ----------------------------------------------------------------
      | Child:             | Child:             | Child:             |
-     |  SOA_A2            |  SOA_B0            |  SOA_B0            |
+     |  SOA_A2            |  SOA_A2            |  SOA_B0            |
      |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |
      |                    |                    |                    |
      |  NS_A              |  NS_A              |                    |

@@ -119,7 +119,7 @@ F> | Published by A     | Published by A     | Published by B     |
 F> | Signed by B        | Signed by B        | Signed by B        |
 F> ----------------------------------------------------------------
 F> | Child:             | Child:             | Child:             |
-F> |  SOA_A2            |  SOA_B0            |  SOA_B0            |
+F> |  SOA_A2            |  SOA_A2            |  SOA_B0            |
 F> |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |
 F> |                    |                    |                    |
 F> |  NS_A              |  NS_A              |                    |
