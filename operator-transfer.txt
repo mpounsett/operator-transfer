@@ -127,11 +127,13 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
    by each operator are appended with the operator letter.
 
      ----------------------------------------------------------------
-     | initial            | pre-publish        | re-delegation      |
+     | initial            | pre-publish        | re-delegation I    |
      ----------------------------------------------------------------
      | Parent:            | Parent:            | Parent:            |
-     |  NS_A              |  NS_A              |  NS_B              |
-     |  DS_A              |  DS_A              |  DS_B              |
+     |  NS_A              |  NS_A              |  NS_A              |
+     |                    |                    |  NS_B              |
+     |  DS_A              |  DS_A              |  DS_A              |
+     |                    |                    |  DS_B              |
      ----------------------------------------------------------------
      | Published by A     | Published by A     | Published by A     |
      | Signed by A        | Signed by A        | Signed by A        |
@@ -151,17 +153,15 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
      |  RRSIG_K_A(DNSKEY) |  RRSIG_K_A(DNSKEY) |  RRSIG_K_A(DNSKEY) |
      ----------------------------------------------------------------
 
-     -------------------------------------------
-     | post-publish       | post-migration     |
-     -------------------------------------------
-     |  Parent:           | Parent:            |
-     |   NS_B             |  NS_B              |
-     |   DS_B             |  DS_B              |
-     -------------------------------------------
-     | Published by A     | Published by B     |
-     | Signed by B        | Signed by B        |
-     -------------------------------------------
-     | Child:             | Child:             |
+     ----------------------------------------------------------------
+     | signing-migration  | re-delegation II   | post-migration     |
+     ----------------------------------------------------------------
+     |  Parent:           | Parent:            | Parent:            |
+     |   NS_A             |                    |                    |
+     |   NS_B             |  NS_B              |  NS_B              |
+     |   DS_A             |                    |                    |
+     |   DS_B             |  DS_B              |  DS_B              |
+     ----------------------------------------------------------------
 
 
 
@@ -170,19 +170,23 @@ Pounsett                Expires October 24, 2016                [Page 3]
 Internet-Draft   Change of Operator for Automated Zones       April 2016
 
 
-     |  SOA_A2            |  SOA_B0            |
-     |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |
-     |                    |                    |
-     |                    |                    |
-     |  NS_B              |  NS_B              |
-     |  RRSIG_Z_B(NS)     |  RRSIG_Z_B(NS)     |
-     |                    |                    |
-     |  DNSKEY_Z_A        |                    |
-     |  DNSKEY_Z_B        |  DNSKEY_Z_B        |
-     |  DNSKEY_K_A        |                    |
-     |  DNSKEY_K_B        |  DNSKEY_K_B        |
-     |  RRSIG_K_B(DNSKEY) |  RRSIG_K_B(DNSKEY) |
-     -------------------------------------------
+     | Published by A     | Published by A     | Published by B     |
+     | Signed by B        | Signed by B        | Signed by B        |
+     ----------------------------------------------------------------
+     | Child:             | Child:             | Child:             |
+     |  SOA_A2            |  SOA_B0            |  SOA_B0            |
+     |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |
+     |                    |                    |                    |
+     |                    |                    |                    |
+     |  NS_B              |  NS_B              |  NS_B              |
+     |  RRSIG_Z_B(NS)     |  RRSIG_Z_B(NS)     |  RRSIG_Z_B(NS)     |
+     |                    |                    |                    |
+     |  DNSKEY_Z_A        |  DNSKEY_Z_A        |                    |
+     |  DNSKEY_Z_B        |  DNSKEY_Z_B        |  DNSKEY_Z_B        |
+     |  DNSKEY_K_A        |  DNSKEY_K_A        |                    |
+     |  DNSKEY_K_B        |  DNSKEY_K_B        |  DNSKEY_K_B        |
+     |  RRSIG_K_B(DNSKEY) |  RRSIG_K_B(DNSKEY) |  RRSIG_K_B(DNSKEY) |
+     ----------------------------------------------------------------
 
                     Rollover for Cooperating Operators
 
@@ -199,10 +203,6 @@ Author's Address
    Rightside Group, Ltd.
 
    Email: matt@conundrum.com
-
-
-
-
 
 
 

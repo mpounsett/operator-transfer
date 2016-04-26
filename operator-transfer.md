@@ -77,11 +77,13 @@ are appended with the operator letter.
 
 F> ~~~~ ascii-art
 F> ----------------------------------------------------------------
-F> | initial            | pre-publish        | re-delegation      |
+F> | initial            | pre-publish        | re-delegation I    |
 F> ----------------------------------------------------------------
 F> | Parent:            | Parent:            | Parent:            |
-F> |  NS_A              |  NS_A              |  NS_B              |
-F> |  DS_A              |  DS_A              |  DS_B              |
+F> |  NS_A              |  NS_A              |  NS_A              |
+F> |                    |                    |  NS_B              |
+F> |  DS_A              |  DS_A              |  DS_A              |
+F> |                    |                    |  DS_B              |
 F> ----------------------------------------------------------------
 F> | Published by A     | Published by A     | Published by A     |
 F> | Signed by A        | Signed by A        | Signed by A        |
@@ -101,30 +103,32 @@ F> |                    |  DNSKEY_K_B        |  DNSKEY_K_B        |
 F> |  RRSIG_K_A(DNSKEY) |  RRSIG_K_A(DNSKEY) |  RRSIG_K_A(DNSKEY) |
 F> ----------------------------------------------------------------
 F>
-F> -------------------------------------------
-F> | post-publish       | post-migration     |
-F> -------------------------------------------
-F> |  Parent:           | Parent:            |
-F> |   NS_B             |  NS_B              |
-F> |   DS_B             |  DS_B              |
-F> -------------------------------------------
-F> | Published by A     | Published by B     |
-F> | Signed by B        | Signed by B        |
-F> -------------------------------------------
-F> | Child:             | Child:             |
-F> |  SOA_A2            |  SOA_B0            |
-F> |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |
-F> |                    |                    |
-F> |                    |                    |
-F> |  NS_B              |  NS_B              |
-F> |  RRSIG_Z_B(NS)     |  RRSIG_Z_B(NS)     |
-F> |                    |                    |
-F> |  DNSKEY_Z_A        |                    |
-F> |  DNSKEY_Z_B        |  DNSKEY_Z_B        |
-F> |  DNSKEY_K_A        |                    |
-F> |  DNSKEY_K_B        |  DNSKEY_K_B        |
-F> |  RRSIG_K_B(DNSKEY) |  RRSIG_K_B(DNSKEY) |
-F> -------------------------------------------
+F> ----------------------------------------------------------------
+F> | signing-migration  | re-delegation II   | post-migration     |
+F> ----------------------------------------------------------------
+F> |  Parent:           | Parent:            | Parent:            |
+F> |   NS_A             |                    |                    |
+F> |   NS_B             |  NS_B              |  NS_B              |
+F> |   DS_A             |                    |                    |
+F> |   DS_B             |  DS_B              |  DS_B              |
+F> ----------------------------------------------------------------
+F> | Published by A     | Published by A     | Published by B     |
+F> | Signed by B        | Signed by B        | Signed by B        |
+F> ----------------------------------------------------------------
+F> | Child:             | Child:             | Child:             |
+F> |  SOA_A2            |  SOA_B0            |  SOA_B0            |
+F> |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |
+F> |                    |                    |                    |
+F> |                    |                    |                    |
+F> |  NS_B              |  NS_B              |  NS_B              |
+F> |  RRSIG_Z_B(NS)     |  RRSIG_Z_B(NS)     |  RRSIG_Z_B(NS)     |
+F> |                    |                    |                    |
+F> |  DNSKEY_Z_A        |  DNSKEY_Z_A        |                    |
+F> |  DNSKEY_Z_B        |  DNSKEY_Z_B        |  DNSKEY_Z_B        |
+F> |  DNSKEY_K_A        |  DNSKEY_K_A        |                    |
+F> |  DNSKEY_K_B        |  DNSKEY_K_B        |  DNSKEY_K_B        |
+F> |  RRSIG_K_B(DNSKEY) |  RRSIG_K_B(DNSKEY) |  RRSIG_K_B(DNSKEY) |
+F> ----------------------------------------------------------------
 F> ~~~~
 F> Figure: Rollover for Cooperating Operators
 
