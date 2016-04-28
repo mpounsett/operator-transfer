@@ -130,7 +130,7 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
      | initial            | pre-publish        | re-delegation I    |
      ----------------------------------------------------------------
      | Parent:            | Parent:            | Parent:            |
-     |  NS_A              |  NS_A              |  NS_A              |
+     |  NS_A              |  NS_A              |                    |
      |                    |                    |  NS_B              |
      |  DS_A              |  DS_A              |  DS_A              |
      |                    |                    |  DS_B              |
@@ -174,7 +174,7 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
      | signing-migration  | re-delegation II   | post-migration     |
      ----------------------------------------------------------------
      |  Parent:           | Parent:            | Parent:            |
-     |   NS_A             |                    |                    |
+     |                    |                    |                    |
      |   NS_B             |  NS_B              |  NS_B              |
      |   DS_A             |                    |                    |
      |   DS_B             |  DS_B              |  DS_B              |

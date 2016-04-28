@@ -80,7 +80,7 @@ F> ----------------------------------------------------------------
 F> | initial            | pre-publish        | re-delegation I    |
 F> ----------------------------------------------------------------
 F> | Parent:            | Parent:            | Parent:            |
-F> |  NS_A              |  NS_A              |  NS_A              |
+F> |  NS_A              |  NS_A              |                    |
 F> |                    |                    |  NS_B              |
 F> |  DS_A              |  DS_A              |  DS_A              |
 F> |                    |                    |  DS_B              |
@@ -110,7 +110,7 @@ F> ----------------------------------------------------------------
 F> | signing-migration  | re-delegation II   | post-migration     |
 F> ----------------------------------------------------------------
 F> |  Parent:           | Parent:            | Parent:            |
-F> |   NS_A             |                    |                    |
+F> |                    |                    |                    |
 F> |   NS_B             |  NS_B              |  NS_B              |
 F> |   DS_A             |                    |                    |
 F> |   DS_B             |  DS_B              |  DS_B              |
