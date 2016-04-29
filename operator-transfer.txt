@@ -142,7 +142,7 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
      |  SOA_A0            |  SOA_A1            |  SOA_A1            |
      |  RRSIG_Z_A(SOA)    |  RRSIG_Z_A(SOA)    |  RRSIG_Z_A(SOA)    |
      |                    |                    |                    |
-     |  NS_A              |  NS_A              |  NS_A              |
+     |  NS_A              |                    |                    |
      |                    |  NS_B              |  NS_B              |
      |  RRSIG_Z_A(NS)     |  RRSIG_Z_A(NS)     |  RRSIG_Z_A(NS)     |
      |                    |                    |                    |
@@ -186,7 +186,7 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
      |  SOA_A2            |  SOA_A2            |  SOA_B0            |
      |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |
      |                    |                    |                    |
-     |  NS_A              |  NS_A              |                    |
+     |                    |                    |                    |
      |  NS_B              |  NS_B              |  NS_B              |
      |  RRSIG_Z_B(NS)     |  RRSIG_Z_B(NS)     |  RRSIG_Z_B(NS)     |
      |                    |                    |                    |

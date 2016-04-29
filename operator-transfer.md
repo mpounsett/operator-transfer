@@ -92,7 +92,7 @@ F> | Child:             | Child:             | Child:             |
 F> |  SOA_A0            |  SOA_A1            |  SOA_A1            |
 F> |  RRSIG_Z_A(SOA)    |  RRSIG_Z_A(SOA)    |  RRSIG_Z_A(SOA)    |
 F> |                    |                    |                    |
-F> |  NS_A              |  NS_A              |  NS_A              |
+F> |  NS_A              |                    |                    |
 F> |                    |  NS_B              |  NS_B              |
 F> |  RRSIG_Z_A(NS)     |  RRSIG_Z_A(NS)     |  RRSIG_Z_A(NS)     |
 F> |                    |                    |                    |
@@ -122,7 +122,7 @@ F> | Child:             | Child:             | Child:             |
 F> |  SOA_A2            |  SOA_A2            |  SOA_B0            |
 F> |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |
 F> |                    |                    |                    |
-F> |  NS_A              |  NS_A              |                    |
+F> |                    |                    |                    |
 F> |  NS_B              |  NS_B              |  NS_B              |
 F> |  RRSIG_Z_B(NS)     |  RRSIG_Z_B(NS)     |  RRSIG_Z_B(NS)     |
 F> |                    |                    |                    |
