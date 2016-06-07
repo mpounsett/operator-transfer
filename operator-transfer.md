@@ -85,10 +85,9 @@ F> |                    |                    |  NS_B              |
 F> |  DS_A              |  DS_A              |  DS_A              |
 F> |                    |                    |  DS_B              |
 F> ----------------------------------------------------------------
+F> | Child:             | Child:             | Child:             |
 F> | Published by A     | Published by A     | Published by A     |
 F> | Signed by A        | Signed by A        | Signed by A        |
-F> ----------------------------------------------------------------
-F> | Child:             | Child:             | Child:             |
 F> |  SOA_A0            |  SOA_A1            |  SOA_A1            |
 F> |  RRSIG_Z_A(SOA)    |  RRSIG_Z_A(SOA)    |  RRSIG_Z_A(SOA)    |
 F> |                    |                    |                    |
@@ -115,10 +114,9 @@ F> |   NS_B             |  NS_B              |  NS_B              |
 F> |   DS_A             |                    |                    |
 F> |   DS_B             |  DS_B              |  DS_B              |
 F> ----------------------------------------------------------------
+F> | Child:             | Child:             | Child:             |
 F> | Published by A     | Published by A     | Published by B     |
 F> | Signed by B        | Signed by B        | Signed by B        |
-F> ----------------------------------------------------------------
-F> | Child:             | Child:             | Child:             |
 F> |  SOA_A2            |  SOA_A2            |  SOA_B0            |
 F> |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |
 F> |                    |                    |                    |
