@@ -27,7 +27,7 @@ describes a procedure for transitioning a DNSSEC signed zone from one
 (cooperative) operator to another.  The procedure works well in many
 situations, but makes the assumption that it is feasible for the two operators
 to simultaneously publish slightly different zones.  In some cases, such as
-with TLD registries, operational considerations may require both operators to
+with TLD registries, operational considerations require both operators to
 publish identical zones for the duration of the transition.  This document
 describes a modified transition procedure which can be used in these cases.
 
