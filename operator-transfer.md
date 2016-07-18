@@ -1,7 +1,7 @@
-% Title = "Change of Operator Procedures for DNSSEC with Automated Publishing"
+% Title = "Change of Operator Procedures for Automatically Published DNSSEC Zones"
 % abbrev = "Change of Operator for Automated Zones"
 % category = "info"
-% docName = "draft-pounsett-transfers-for-busy-DNSSEC-zones"
+% docName = "draft-pounsett-transfers-of-automated-DNSSEC-zones"
 % ipr = "trust200902"
 % area = "OPS"
 % workgroup = ""
@@ -26,10 +26,11 @@ Section 4.3.5.1 of [@RFC6781] "DNSSEC Operational Practices, version 2"
 describes a procedure for transitioning a DNSSEC signed zone from one
 (cooperative) operator to another.  The procedure works well in many
 situations, but makes the assumption that it is feasible for the two operators
-to simultaneously publish slightly different zones.  In some cases, such as
-with TLD registries, operational considerations require both operators to
-publish identical zones for the duration of the transition.  This document
-describes a modified transition procedure which can be used in these cases.
+to simultaneously publish slightly different versions of the zone being
+transferred.  In some cases, such as with TLD registries, operational
+considerations require both operators to publish identical versions of the
+zone for the duration of the transition.  This document describes a modified
+transition procedure which can be used in these cases.
 
 {mainmatter}
 
@@ -38,7 +39,7 @@ describes a modified transition procedure which can be used in these cases.
 The process described in "DNSSEC Operational Practices, version 2"
 ([@RFC6781]), section 4.3.5.1 for cooperating DNS operators to move a DNSSEC
 signed zone cannot be followed in all cases.  When operators are moving a zone
-that is automatically updated and/or changes rapidly, such as with a TLD or
+that is automatically published and/or changes rapidly, such as with a TLD or
 any other zone published from a registration database, it may not be feasible
 for the operators to publish different versions of the same zone.
 
@@ -59,10 +60,11 @@ In this scenario, it is assumed that the operators will not exchange any
 private key material, but are otherwise fully cooperative.  It is also assumed
 that the zone publishing process will be transferred between operators
 independently of the DNS operations.  The simplest case is to transition the
-publishing process after the DNS operations move has been completed, although
-the reverse order is possible.  During the transition, the losing operator
-will provide the zone contents to the gaining operator by some automatic means
-(typically zone transfer).
+publishing process after the DNS operations move has been completed, and is
+the order that is assumed in this document, although the reverse order is
+possible.  During the transition, the losing operator will provide the zone
+contents to the gaining operator by some automatic means (typically zone
+transfer).
 
 The transition uses a pre-publish KSK and ZSK rollover, whereby the losing
 operator pre-publishes the public KSK and ZSH of the gaining operator.
