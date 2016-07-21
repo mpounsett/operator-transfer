@@ -4,13 +4,13 @@
 
 Network Working Group                                        M. Pounsett
 Internet-Draft                                     Rightside Group, Ltd.
-Updates: 6781 (if approved)                               April 22, 2016
+Updates: 6781 (if approved)                                July 21, 2016
 Intended status: Informational
-Expires: October 24, 2016
+Expires: January 22, 2017
 
 
  Change of Operator Procedures for Automatically Published DNSSEC Zones
-           draft-pounsett-transferring-automated-DNSSEC-zones
+         draft-pounsett-transferring-automated-dnssec-zones-00
 
 Abstract
 
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 24, 2016.
+   This Internet-Draft will expire on January 22, 2017.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Pounsett                Expires October 24, 2016                [Page 1]
+Pounsett                Expires January 22, 2017                [Page 1]
 
-Internet-Draft   Change of Operator for Automated Zones       April 2016
+Internet-Draft   Change of Operator for Automated Zones        July 2016
 
 
    publication of this document.  Please review these documents
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Pounsett                Expires October 24, 2016                [Page 2]
+Pounsett                Expires January 22, 2017                [Page 2]
 
-Internet-Draft   Change of Operator for Automated Zones       April 2016
+Internet-Draft   Change of Operator for Automated Zones        July 2016
 
 
    The transition uses a pre-publish KSK and ZSK rollover, whereby the
@@ -165,9 +165,9 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
 
 
 
-Pounsett                Expires October 24, 2016                [Page 3]
+Pounsett                Expires January 22, 2017                [Page 3]
 
-Internet-Draft   Change of Operator for Automated Zones       April 2016
+Internet-Draft   Change of Operator for Automated Zones        July 2016
 
 
      ----------------------------------------------------------------
@@ -221,4 +221,4 @@ Author's Address
 
 
 
-Pounsett                Expires October 24, 2016                [Page 4]
+Pounsett                Expires January 22, 2017                [Page 4]

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE rfc SYSTEM 'rfc2629.dtd' []>
-<rfc ipr="trust200902" category="info" docName="draft-pounsett-transferring-automated-DNSSEC-zones" updates="6781">
+<rfc ipr="trust200902" category="info" docName="draft-pounsett-transferring-automated-dnssec-zones-00" updates="6781">
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
 <?rfc sortrefs="yes"?>
@@ -27,7 +27,7 @@
 <uri></uri>
 </address>
 </author>
-<date year="2016" month="April" day="22"/>
+<date year="2016" month="July" day="21"/>
 
 <area>OPS</area>
 <workgroup></workgroup>

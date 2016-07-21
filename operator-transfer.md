@@ -1,14 +1,14 @@
 % Title = "Change of Operator Procedures for Automatically Published DNSSEC Zones"
 % abbrev = "Change of Operator for Automated Zones"
 % category = "info"
-% docName = "draft-pounsett-transferring-automated-DNSSEC-zones"
+% docName = "draft-pounsett-transferring-automated-dnssec-zones-00"
 % ipr = "trust200902"
 % area = "OPS"
 % workgroup = ""
 % keyword = ["dnssec", "operator", "procedures"]
 % updates = [6781]
 %
-% date = 2016-04-22T00:00:00Z
+% date = 2016-07-21T18:00:00Z
 %
 % [[author]]
 % initials = "M."
