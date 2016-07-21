@@ -146,3 +146,29 @@ section 6.
 This document has no actions for IANA.
 
 {backmatter}
+
+# Document Source
+
+A> [RFC Editor: Please remove this section before publication.]
+
+This document is maintained at Github at
+<https://github.com/mpounsett/operator-transfer>.  Issue reports and pull
+requests are gratefully accepted here. 
+
+The XML and TXT versions of this document are generated from Markdown
+using mmark by Miek Gieben.  mmark is available at
+<https://github.com/miekg/mmark>.
+
+# Changelist
+
+A> [RFC Editor: Please remove this section before publication.]
+
+## Version pounsett-01 (Not yet submitted)
+
+- added Security Considerations section
+- added IANA Considerations section
+- added Document Source and Changelist
+
+## Version pounsett-00
+
+Initial Submission

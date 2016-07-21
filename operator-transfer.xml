@@ -174,5 +174,42 @@ section 6.
 <?rfc include="http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6781.xml"?>
 </references>
 
+<section anchor="document-source" title="Document Source">
+<t><list style="empty">
+<t>[RFC Editor: Please remove this section before publication.]
+</t>
+</list></t>
+<t>This document is maintained at Github at
+<eref target="https://github.com/mpounsett/operator-transfer"/>.  Issue reports and pull
+requests are gratefully accepted here.
+</t>
+<t>The XML and TXT versions of this document are generated from Markdown
+using mmark by Miek Gieben.  mmark is available at
+<eref target="https://github.com/miekg/mmark"/>.
+</t>
+</section>
+
+<section anchor="changelist" title="Changelist">
+<t><list style="empty">
+<t>[RFC Editor: Please remove this section before publication.]
+</t>
+</list></t>
+
+<section anchor="version-pounsett01-not-yet-submitted" title="Version pounsett-01 (Not yet submitted)">
+<t>
+<list style="symbols">
+<t>added Security Considerations section</t>
+<t>added IANA Considerations section</t>
+<t>added Document Source and Changelist</t>
+</list>
+</t>
+</section>
+
+<section anchor="version-pounsett00" title="Version pounsett-00">
+<t>Initial Submission
+</t>
+</section>
+</section>
+
 </back>
 </rfc>

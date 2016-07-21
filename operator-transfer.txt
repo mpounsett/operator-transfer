@@ -72,6 +72,10 @@ Table of Contents
    3.  Security Considerations . . . . . . . . . . . . . . . . . . .   4
    4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   4
    5.  Normative References  . . . . . . . . . . . . . . . . . . . .   4
+   Appendix A.  Document Source  . . . . . . . . . . . . . . . . . .   5
+   Appendix B.  Changelist . . . . . . . . . . . . . . . . . . . . .   5
+     B.1.  Version pounsett-01 (Not yet submitted) . . . . . . . . .   5
+     B.2.  Version pounsett-00 . . . . . . . . . . . . . . . . . . .   5
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   5
 
 1.  Introduction
@@ -102,10 +106,6 @@ Table of Contents
    In this scenario, it is assumed that the operators will not exchange
    any private key material, but are otherwise fully cooperative.  It is
    also assumed that the zone publishing process will be transferred
-   between operators independently of the DNS operations.  The simplest
-   case is to transition the publishing process after the DNS operations
-   move has been completed, and is the order that is assumed in this
-   document, although the reverse order is possible.  During the
 
 
 
@@ -114,6 +114,10 @@ Pounsett                Expires January 22, 2017                [Page 2]
 Internet-Draft   Change of Operator for Automated Zones        July 2016
 
 
+   between operators independently of the DNS operations.  The simplest
+   case is to transition the publishing process after the DNS operations
+   move has been completed, and is the order that is assumed in this
+   document, although the reverse order is possible.  During the
    transition, the losing operator will provide the zone contents to the
    gaining operator by some automatic means (typically zone transfer).
 
@@ -158,10 +162,6 @@ Internet-Draft   Change of Operator for Automated Zones        July 2016
      ----------------------------------------------------------------
 
                Rollover for Cooperating Operators, Steps 1-3
-
-
-
-
 
 
 
@@ -226,40 +226,40 @@ Pounsett                Expires January 22, 2017                [Page 4]
 Internet-Draft   Change of Operator for Automated Zones        July 2016
 
 
+Appendix A.  Document Source
+
+      [RFC Editor: Please remove this section before publication.]
+
+   This document is maintained at Github at
+   <https://github.com/mpounsett/operator-transfer>.  Issue reports and
+   pull requests are gratefully accepted here.
+
+   The XML and TXT versions of this document are generated from Markdown
+   using mmark by Miek Gieben.  mmark is available at
+   <https://github.com/miekg/mmark>.
+
+Appendix B.  Changelist
+
+      [RFC Editor: Please remove this section before publication.]
+
+B.1.  Version pounsett-01 (Not yet submitted)
+
+   o  added Security Considerations section
+
+   o  added IANA Considerations section
+
+   o  added Document Source and Changelist
+
+B.2.  Version pounsett-00
+
+   Initial Submission
+
 Author's Address
 
    Matthew Pounsett
    Rightside Group, Ltd.
 
    Email: matt@conundrum.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
