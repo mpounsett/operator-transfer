@@ -9,8 +9,8 @@ Intended status: Informational
 Expires: October 24, 2016
 
 
-   Change of Operator Procedures for DNSSEC with Automated Publishing
-             draft-pounsett-transfers-for-busy-DNSSEC-zones
+ Change of Operator Procedures for Automatically Published DNSSEC Zones
+           draft-pounsett-transferring-automated-DNSSEC-zones
 
 Abstract
 
@@ -18,11 +18,12 @@ Abstract
    2" describes a procedure for transitioning a DNSSEC signed zone from
    one (cooperative) operator to another.  The procedure works well in
    many situations, but makes the assumption that it is feasible for the
-   two operators to simultaneously publish slightly different zones.  In
-   some cases, such as with TLD registries, operational considerations
-   may require both operators to publish identical zones for the
-   duration of the transition.  This document describes a modified
-   transition procedure which can be used in these cases.
+   two operators to simultaneously publish slightly different versions
+   of the zone being transferred.  In some cases, such as with TLD
+   registries, operational considerations require both operators to
+   publish identical versions of the zone for the duration of the
+   transition.  This document describes a modified transition procedure
+   which can be used in these cases.
 
 Status of This Memo
 
@@ -49,7 +50,6 @@ Copyright Notice
    This document is subject to BCP 78 and the IETF Trust's Legal
    Provisions Relating to IETF Documents
    (http://trustee.ietf.org/license-info) in effect on the date of
-   publication of this document.  Please review these documents
 
 
 
@@ -58,6 +58,7 @@ Pounsett                Expires October 24, 2016                [Page 1]
 Internet-Draft   Change of Operator for Automated Zones       April 2016
 
 
+   publication of this document.  Please review these documents
    carefully, as they describe your rights and restrictions with respect
    to this document.  Code Components extracted from this document must
    include Simplified BSD License text as described in Section 4.e of
@@ -76,7 +77,7 @@ Table of Contents
    The process described in "DNSSEC Operational Practices, version 2"
    ([RFC6781]), section 4.3.5.1 for cooperating DNS operators to move a
    DNSSEC signed zone cannot be followed in all cases.  When operators
-   are moving a zone that is automatically updated and/or changes
+   are moving a zone that is automatically published and/or changes
    rapidly, such as with a TLD or any other zone published from a
    registration database, it may not be feasible for the operators to
    publish different versions of the same zone.
@@ -101,11 +102,10 @@ Table of Contents
    also assumed that the zone publishing process will be transferred
    between operators independently of the DNS operations.  The simplest
    case is to transition the publishing process after the DNS operations
-   move has been completed, although the reverse order is possible.
-   During the transition, the losing operator will provide the zone
-   contents to the gaining operator by some automatic means (typically
-   zone transfer).
-
+   move has been completed, and is the order that is assumed in this
+   document, although the reverse order is possible.  During the
+   transition, the losing operator will provide the zone contents to the
+   gaining operator by some automatic means (typically zone transfer).
 
 
 
@@ -124,7 +124,9 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
 
    In the timeline below, the losing operator is operator A, and the
    gaining operator is operator B.  Records representig data generated
-   by each operator are appended with the operator letter.
+   by each operator are appended with the operator letter.  DNSKEY_Z is
+   a ZSK, and DNSKEY_K is a KSK.  RRSIG_K is the RRSIG generated with
+   DNSKEY_K.
 
      ----------------------------------------------------------------
      | initial            | pre-publish        | re-delegation I    |
@@ -135,10 +137,9 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
      |  DS_A              |  DS_A              |  DS_A              |
      |                    |                    |  DS_B              |
      ----------------------------------------------------------------
+     | Child:             | Child:             | Child:             |
      | Published by A     | Published by A     | Published by A     |
      | Signed by A        | Signed by A        | Signed by A        |
-     ----------------------------------------------------------------
-     | Child:             | Child:             | Child:             |
      |  SOA_A0            |  SOA_A1            |  SOA_A1            |
      |  RRSIG_Z_A(SOA)    |  RRSIG_Z_A(SOA)    |  RRSIG_Z_A(SOA)    |
      |                    |                    |                    |
@@ -164,7 +165,6 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
 
 
 
-
 Pounsett                Expires October 24, 2016                [Page 3]
 
 Internet-Draft   Change of Operator for Automated Zones       April 2016
@@ -179,10 +179,9 @@ Internet-Draft   Change of Operator for Automated Zones       April 2016
      |   DS_A             |                    |                    |
      |   DS_B             |  DS_B              |  DS_B              |
      ----------------------------------------------------------------
+     | Child:             | Child:             | Child:             |
      | Published by A     | Published by A     | Published by B     |
      | Signed by B        | Signed by B        | Signed by B        |
-     ----------------------------------------------------------------
-     | Child:             | Child:             | Child:             |
      |  SOA_A2            |  SOA_A2            |  SOA_B0            |
      |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |  RRSIG_Z_B(SOA)    |
      |                    |                    |                    |
@@ -212,6 +211,7 @@ Author's Address
    Rightside Group, Ltd.
 
    Email: matt@conundrum.com
+
 
 
 
