@@ -136,4 +136,13 @@ F> ----------------------------------------------------------------
 F> ~~~~
 F> Figure: Rollover for Cooperating Operators, Steps 4-6
 
+# Security Considerations
+
+This document raises no new security considerations.  Please see [@!RFC6781]
+section 6.
+
+# IANA Considerations
+
+This document has no actions for IANA.
+
 {backmatter}

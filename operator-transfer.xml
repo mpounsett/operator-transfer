@@ -157,9 +157,20 @@ KSK.  RRSIG_K is the RRSIG generated with DNSKEY_K.
 </artwork></figure>
 </section>
 
+<section anchor="security-considerations" title="Security Considerations">
+<t>This document raises no new security considerations.  Please see <xref target="RFC6781"/>
+section 6.
+</t>
+</section>
+
+<section anchor="iana-considerations" title="IANA Considerations">
+<t>This document has no actions for IANA.
+</t>
+</section>
+
 </middle>
 <back>
-<references title="Informative References">
+<references title="Normative References">
 <?rfc include="http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6781.xml"?>
 </references>
 

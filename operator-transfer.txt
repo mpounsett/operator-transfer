@@ -69,8 +69,10 @@ Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Changing Between Cooperating DNS Operators  . . . . . . . . .   2
-   3.  Informative References  . . . . . . . . . . . . . . . . . . .   4
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   4
+   3.  Security Considerations . . . . . . . . . . . . . . . . . . .   4
+   4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   4
+   5.  Normative References  . . . . . . . . . . . . . . . . . . . .   4
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   5
 
 1.  Introduction
 
@@ -104,8 +106,6 @@ Table of Contents
    case is to transition the publishing process after the DNS operations
    move has been completed, and is the order that is assumed in this
    document, although the reverse order is possible.  During the
-   transition, the losing operator will provide the zone contents to the
-   gaining operator by some automatic means (typically zone transfer).
 
 
 
@@ -113,6 +113,9 @@ Pounsett                Expires January 22, 2017                [Page 2]
 
 Internet-Draft   Change of Operator for Automated Zones        July 2016
 
+
+   transition, the losing operator will provide the zone contents to the
+   gaining operator by some automatic means (typically zone transfer).
 
    The transition uses a pre-publish KSK and ZSK rollover, whereby the
    losing operator pre-publishes the public KSK and ZSH of the gaining
@@ -162,9 +165,6 @@ Internet-Draft   Change of Operator for Automated Zones        July 2016
 
 
 
-
-
-
 Pounsett                Expires January 22, 2017                [Page 3]
 
 Internet-Draft   Change of Operator for Automated Zones        July 2016
@@ -198,12 +198,33 @@ Internet-Draft   Change of Operator for Automated Zones        July 2016
 
                Rollover for Cooperating Operators, Steps 4-6
 
-3.  Informative References
+3.  Security Considerations
+
+   This document raises no new security considerations.  Please see
+   [RFC6781] section 6.
+
+4.  IANA Considerations
+
+   This document has no actions for IANA.
+
+5.  Normative References
 
    [RFC6781]  Kolkman, O., Mekking, W., and R. Gieben, "DNSSEC
               Operational Practices, Version 2", RFC 6781, DOI 10.17487/
               RFC6781, December 2012,
               <http://www.rfc-editor.org/info/rfc6781>.
+
+
+
+
+
+
+
+
+Pounsett                Expires January 22, 2017                [Page 4]
+
+Internet-Draft   Change of Operator for Automated Zones        July 2016
+
 
 Author's Address
 
@@ -221,4 +242,39 @@ Author's Address
 
 
 
-Pounsett                Expires January 22, 2017                [Page 4]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pounsett                Expires January 22, 2017                [Page 5]
