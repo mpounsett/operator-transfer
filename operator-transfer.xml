@@ -160,8 +160,8 @@ KSK.  RRSIG_K is the RRSIG generated with DNSKEY_K.
 </section>
 
 <section anchor="security-considerations" title="Security Considerations">
-<t>This document raises no new security considerations.  Please see <xref target="RFC6781"/>
-section 6.
+<t>This document raises no new security considerations.  Please see
+Section 6 of <xref target="RFC6781"/>.
 </t>
 </section>
 

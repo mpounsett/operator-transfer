@@ -257,7 +257,7 @@ Internet-Draft   Change of Operator for Automated Zones        July 2016
 3.  Security Considerations
 
    This document raises no new security considerations.  Please see
-   [RFC6781] section 6.
+   Section 6 of [RFC6781].
 
 4.  IANA Considerations
 
