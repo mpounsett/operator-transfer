@@ -4,13 +4,13 @@
 
 Network Working Group                                        M. Pounsett
 Internet-Draft                                     Rightside Group, Ltd.
-Updates: 6781 (if approved)                                July 21, 2016
+Updates: 6781 (if approved)                               August 2, 2016
 Intended status: Informational
-Expires: January 22, 2017
+Expires: February 3, 2017
 
 
  Change of Operator Procedures for Automatically Published DNSSEC Zones
-         draft-pounsett-transferring-automated-dnssec-zones-00
+         draft-pounsett-transferring-automated-dnssec-zones-01
 
 Abstract
 
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 22, 2017.
+   This Internet-Draft will expire on February 3, 2017.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Pounsett                Expires January 22, 2017                [Page 1]
+Pounsett                Expires February 3, 2017                [Page 1]
 
-Internet-Draft   Change of Operator for Automated Zones        July 2016
+Internet-Draft   Change of Operator for Automated Zones      August 2016
 
 
    publication of this document.  Please review these documents
@@ -74,7 +74,7 @@ Table of Contents
    5.  Normative References  . . . . . . . . . . . . . . . . . . . .   5
    Appendix A.  Document Source  . . . . . . . . . . . . . . . . . .   6
    Appendix B.  Changelist . . . . . . . . . . . . . . . . . . . . .   6
-     B.1.  Version pounsett-01 (Not yet submitted) . . . . . . . . .   6
+     B.1.  Version pounsett-01 . . . . . . . . . . . . . . . . . . .   6
      B.2.  Version pounsett-00 . . . . . . . . . . . . . . . . . . .   6
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   6
 
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Pounsett                Expires January 22, 2017                [Page 2]
+Pounsett                Expires February 3, 2017                [Page 2]
 
-Internet-Draft   Change of Operator for Automated Zones        July 2016
+Internet-Draft   Change of Operator for Automated Zones      August 2016
 
 
    between operators independently of the DNS operations.  The simplest
@@ -165,9 +165,9 @@ Internet-Draft   Change of Operator for Automated Zones        July 2016
 
 
 
-Pounsett                Expires January 22, 2017                [Page 3]
+Pounsett                Expires February 3, 2017                [Page 3]
 
-Internet-Draft   Change of Operator for Automated Zones        July 2016
+Internet-Draft   Change of Operator for Automated Zones      August 2016
 
 
      ----------------------------------------------------------------
@@ -221,9 +221,9 @@ Internet-Draft   Change of Operator for Automated Zones        July 2016
 
 
 
-Pounsett                Expires January 22, 2017                [Page 4]
+Pounsett                Expires February 3, 2017                [Page 4]
 
-Internet-Draft   Change of Operator for Automated Zones        July 2016
+Internet-Draft   Change of Operator for Automated Zones      August 2016
 
 
      ----------------------------------------------------------------
@@ -277,9 +277,9 @@ Internet-Draft   Change of Operator for Automated Zones        July 2016
 
 
 
-Pounsett                Expires January 22, 2017                [Page 5]
+Pounsett                Expires February 3, 2017                [Page 5]
 
-Internet-Draft   Change of Operator for Automated Zones        July 2016
+Internet-Draft   Change of Operator for Automated Zones      August 2016
 
 
 Appendix A.  Document Source
@@ -298,7 +298,7 @@ Appendix B.  Changelist
 
       [RFC Editor: Please remove this section before publication.]
 
-B.1.  Version pounsett-01 (Not yet submitted)
+B.1.  Version pounsett-01
 
    o  grammar and spelling nits
 
@@ -333,4 +333,4 @@ Author's Address
 
 
 
-Pounsett                Expires January 22, 2017                [Page 6]
+Pounsett                Expires February 3, 2017                [Page 6]

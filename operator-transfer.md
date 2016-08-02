@@ -1,14 +1,14 @@
 % Title = "Change of Operator Procedures for Automatically Published DNSSEC Zones"
 % abbrev = "Change of Operator for Automated Zones"
 % category = "info"
-% docName = "draft-pounsett-transferring-automated-dnssec-zones-00"
+% docName = "draft-pounsett-transferring-automated-dnssec-zones-01"
 % ipr = "trust200902"
 % area = "OPS"
 % workgroup = ""
 % keyword = ["dnssec", "operator", "procedures"]
 % updates = [6781]
 %
-% date = 2016-07-21T18:00:00Z
+% date = 2016-08-02T00:00:00Z
 %
 % [[author]]
 % initials = "M."
@@ -165,7 +165,7 @@ using mmark by Miek Gieben.  mmark is available at
 
 A> [RFC Editor: Please remove this section before publication.]
 
-## Version pounsett-01 (Not yet submitted)
+## Version pounsett-01
 
 - grammar and spelling nits
 - added Security Considerations section
