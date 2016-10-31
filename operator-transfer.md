@@ -22,7 +22,7 @@
 
 .# Abstract
 
-Section 4.3.5.1 of [@RFC6781] "DNSSEC Operational Practices, version 2"
+Section 4.3.5.1 of [@!RFC6781] "DNSSEC Operational Practices, version 2"
 describes a procedure for transitioning a DNSSEC signed zone from one
 (cooperative) operator to another.  The procedure works well in many
 situations, but makes the assumption that it is feasible for the two operators
@@ -37,7 +37,7 @@ transition procedure which can be used in these cases.
 # Introduction
 
 The process described in "DNSSEC Operational Practices, version 2"
-([@RFC6781]), section 4.3.5.1 for cooperating DNS operators to move a DNSSEC
+([@!RFC6781]), section 4.3.5.1 for cooperating DNS operators to move a DNSSEC
 signed zone cannot be followed in all cases.  When operators are moving a zone
 that is automatically published and/or changes rapidly, such as with a TLD or
 any other zone published from a registration database, it may not be feasible
