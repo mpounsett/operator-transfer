@@ -101,7 +101,7 @@ are appended with the operator letter.  DNSKEY_Z is a ZSK, and DNSKEY_K is a
 KSK.  RRSIG_K is the RRSIG generated with DNSKEY_K.
 </t>
 
-<figure align="center" title="Rollover for Cooperating Operators, Steps 1-3
+<figure anchor="Steps13" align="center" title="Rollover for Cooperating Operators, Steps 1-3
 "><artwork align="center" type="ascii-art">
 ----------------------------------------------------------------
 | initial            | pre-publish        | re-delegation I    |
@@ -130,7 +130,7 @@ KSK.  RRSIG_K is the RRSIG generated with DNSKEY_K.
 ----------------------------------------------------------------
 </artwork></figure>
 
-<figure align="center" title="Rollover for Cooperating Operators, Steps 4-6"><artwork align="center" type="ascii-art">
+<figure anchor="Steps46" align="center" title="Rollover for Cooperating Operators, Steps 4-6 "><artwork align="center" type="ascii-art">
 ----------------------------------------------------------------
 | signing-migration  | re-delegation II   | post-migration     |
 ----------------------------------------------------------------

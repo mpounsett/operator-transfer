@@ -107,7 +107,7 @@ F> |                    |  DNSKEY_K_B        |  DNSKEY_K_B        |
 F> |  RRSIG_K_A(DNSKEY) |  RRSIG_K_A(DNSKEY) |  RRSIG_K_A(DNSKEY) |
 F> ----------------------------------------------------------------
 F> ~~~~
-F> Figure: Rollover for Cooperating Operators, Steps 1-3
+F> Figure: Rollover for Cooperating Operators, Steps 1-3 {#Steps13}
 
 F> ~~~~ ascii-art
 F> ----------------------------------------------------------------
@@ -136,7 +136,7 @@ F> |  DNSKEY_K_B        |  DNSKEY_K_B        |  DNSKEY_K_B        |
 F> |  RRSIG_K_B(DNSKEY) |  RRSIG_K_B(DNSKEY) |  RRSIG_K_B(DNSKEY) |
 F> ----------------------------------------------------------------
 F> ~~~~
-F> Figure: Rollover for Cooperating Operators, Steps 4-6
+F> Figure: Rollover for Cooperating Operators, Steps 4-6 {#Steps46}
 
 # Security Considerations
 
