@@ -73,15 +73,15 @@ Table of Contents
      2.2.  Procedure Overview  . . . . . . . . . . . . . . . . . . .   3
      2.3.  Procedure Notation  . . . . . . . . . . . . . . . . . . .   3
      2.4.  The Procedure . . . . . . . . . . . . . . . . . . . . . .   3
-   3.  Security Considerations . . . . . . . . . . . . . . . . . . .   5
-   4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   5
-   5.  Normative References  . . . . . . . . . . . . . . . . . . . .   5
+   3.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
+   4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
+   5.  Normative References  . . . . . . . . . . . . . . . . . . . .   6
    Appendix A.  Document Source  . . . . . . . . . . . . . . . . . .   6
    Appendix B.  Changelist . . . . . . . . . . . . . . . . . . . . .   6
      B.1.  Version pounsett-02 (Unpublished) . . . . . . . . . . . .   6
-     B.2.  Version pounsett-01 . . . . . . . . . . . . . . . . . . .   6
-     B.3.  Version pounsett-00 . . . . . . . . . . . . . . . . . . .   6
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   6
+     B.2.  Version pounsett-01 . . . . . . . . . . . . . . . . . . .   7
+     B.3.  Version pounsett-00 . . . . . . . . . . . . . . . . . . .   7
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   7
 
 1.  Introduction
 
@@ -155,13 +155,13 @@ Internet-Draft   Change of Operator for Automated Zones      August 2016
 
 2.4.  The Procedure
 
+   The KSK and ZSK rollover from the losing to gaining operator keys
+   involves six stages as described in Figure 1 and Figure 2.
 
-
-
-
-
-
-
+   Initial
+      The initial version of the zone.  This zone is published and
+      signed by the losing operator.  During this stage the gaining
+      operator should begin serving the zone on its name servers.
 
 
 
@@ -169,6 +169,22 @@ Pounsett                Expires February 3, 2017                [Page 3]
 
 Internet-Draft   Change of Operator for Automated Zones      August 2016
 
+
+   Pre-Publish
+      Operator A begins pre-publishing DNSKEY_K_B and DNSKEY_Z_B.  At
+      the same time, the NS set at the apex of the zone is changed to
+      NS_B to begin moving traffic to the gaining name servers.  The
+      operators MUST wait at least the time it takes for the data to
+      propagate to all authoritative servers plus the TTL of the DNSKEY
+      set before the Signing Migration step can be begun.
+
+   Re-Delegation
+      The parent changes the prent NS set to be NS_B, to match the NS
+      set at the apex of the child zone.  The parent also begins
+      publishing the DS record for the gaining operator.  The operators
+      MUST wait at least the time it takes for the data to propagate to
+      all the parent servers plus the TTL of the DS set before the
+      Signing Migration step can be begun.
 
      ----------------------------------------------------------------
      | initial            | pre-publish        | re-delegation      |
@@ -198,26 +214,10 @@ Internet-Draft   Change of Operator for Automated Zones      August 2016
 
           Figure 1: Rollover for Cooperating Operators, Steps 1-3
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   Signing Migration
+      Once the new (pre-published) DNSKEY records and DS_B are in the
+      caches of validating clients the operators can swap signing
+      duties; RRSIG_K_B and RRSIG_Z_B become the active signing keys.
 
 
 
@@ -225,6 +225,24 @@ Pounsett                Expires February 3, 2017                [Page 4]
 
 Internet-Draft   Change of Operator for Automated Zones      August 2016
 
+
+      When the ganinig operator begins signing the zone, either they
+      MUST strip the RRSIGs of the losing operator, or the losing
+      operator MUST begin producing an unsigned zone.  The operators
+      MUST wait at least the largest TTL of any RRSIG in the zone before
+      moving on to the Old DS Removal step.
+
+   Old DS Removal
+      The parent now removes the old DS_A from its zone.  The operators
+      MUST wait at least the TTL of the DS set before moving on to the
+      Post Migration step.
+
+   Post Migration
+      After the old DS set has expired from caches the gaining operator
+      may remove the losing operator DNSKEYs from the zone.  At this
+      time it is assumed that the gaining operator severs whatever
+      process was transferring zone data from the losing operator, and
+      the gaining operator begins publishing the zone.
 
      ----------------------------------------------------------------
      | signing migration  | old DS removal     | post migration     |
@@ -254,6 +272,16 @@ Internet-Draft   Change of Operator for Automated Zones      August 2016
 
           Figure 2: Rollover for Cooperating Operators, Steps 4-6
 
+
+
+
+
+
+Pounsett                Expires February 3, 2017                [Page 5]
+
+Internet-Draft   Change of Operator for Automated Zones      August 2016
+
+
 3.  Security Considerations
 
    This document raises no new security considerations.  Please see
@@ -269,18 +297,6 @@ Internet-Draft   Change of Operator for Automated Zones      August 2016
               Operational Practices, Version 2", RFC 6781,
               DOI 10.17487/RFC6781, December 2012,
               <http://www.rfc-editor.org/info/rfc6781>.
-
-
-
-
-
-
-
-
-Pounsett                Expires February 3, 2017                [Page 5]
-
-Internet-Draft   Change of Operator for Automated Zones      August 2016
-
 
 Appendix A.  Document Source
 
@@ -308,6 +324,20 @@ B.1.  Version pounsett-02 (Unpublished)
 
    o  rename procedure steps for clarity
 
+   o  add prose description of operator key roll
+
+
+
+
+
+
+
+
+Pounsett                Expires February 3, 2017                [Page 6]
+
+Internet-Draft   Change of Operator for Automated Zones      August 2016
+
+
 B.2.  Version pounsett-01
 
    o  grammar and spelling nits
@@ -333,4 +363,30 @@ Author's Address
 
 
 
-Pounsett                Expires February 3, 2017                [Page 6]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pounsett                Expires February 3, 2017                [Page 7]

@@ -92,6 +92,28 @@ the SOA record.
 
 ## The Procedure
 
+The KSK and ZSK rollover from the losing to gaining operator keys involves six
+stages as described in (#Steps13) and (#Steps46).
+
+Initial
+: The initial version of the zone.  This zone is published and signed by the
+  losing operator.  During this stage the gaining operator should begin
+  serving the zone on its name servers.
+
+Pre-Publish
+: Operator A begins pre-publishing DNSKEY_K_B and DNSKEY_Z_B.  At the same
+  time, the NS set at the apex of the zone is changed to NS_B to begin moving
+  traffic to the gaining name servers.  The operators MUST wait at least the
+  time it takes for the data to propagate to all authoritative servers plus
+  the TTL of the DNSKEY set before the Signing Migration step can be begun.
+
+Re-Delegation
+: The parent changes the prent NS set to be NS_B, to match the NS set at the
+  apex of the child zone.  The parent also begins publishing the DS record for
+  the gaining operator.  The operators MUST wait at least the time it takes
+  for the data to propagate to all the parent servers plus the TTL of the DS
+  set before the Signing Migration step can be begun.
+
 F> ~~~~ ascii-art
 F> ----------------------------------------------------------------
 F> | initial            | pre-publish        | re-delegation      |
@@ -120,6 +142,25 @@ F> |  RRSIG_K_A(DNSKEY) |  RRSIG_K_A(DNSKEY) |  RRSIG_K_A(DNSKEY) |
 F> ----------------------------------------------------------------
 F> ~~~~
 F> Figure: Rollover for Cooperating Operators, Steps 1-3 {#Steps13}
+
+Signing Migration
+: Once the new (pre-published) DNSKEY records and DS_B are in the caches of
+  validating clients the operators can swap signing duties; RRSIG_K_B and
+  RRSIG_Z_B become the active signing keys.  When the ganinig operator begins
+  signing the zone, either they MUST strip the RRSIGs of the losing operator,
+  or the losing operator MUST begin producing an unsigned zone.  The operators
+  MUST wait at least the largest TTL of any RRSIG in the zone before moving on
+  to the Old DS Removal step.
+
+Old DS Removal
+: The parent now removes the old DS_A from its zone.  The operators MUST wait
+  at least the TTL of the DS set before moving on to the Post Migration step.
+
+Post Migration
+: After the old DS set has expired from caches the gaining operator may remove
+  the losing operator DNSKEYs from the zone.  At this time it is assumed that
+  the gaining operator severs whatever process was transferring zone data from
+  the losing operator, and the gaining operator begins publishing the zone.
 
 F> ~~~~ ascii-art
 F> ----------------------------------------------------------------
@@ -183,6 +224,7 @@ A> [RFC Editor: Please remove this section before publication.]
 - separate procedural section into subsections
 - improve notation explanation
 - rename procedure steps for clarity
+- add prose description of operator key roll
 
 ## Version pounsett-01
 
