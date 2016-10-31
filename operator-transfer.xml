@@ -119,7 +119,7 @@ the SOA record.
 <figure anchor="Steps13" align="center" title="Rollover for Cooperating Operators, Steps 1-3
 "><artwork align="center" type="ascii-art">
 ----------------------------------------------------------------
-| initial            | pre-publish        | re-delegation I    |
+| initial            | pre-publish        | re-delegation      |
 ----------------------------------------------------------------
 | Parent:            | Parent:            | Parent:            |
 |  NS_A              |  NS_A              |                    |
@@ -147,7 +147,7 @@ the SOA record.
 
 <figure anchor="Steps46" align="center" title="Rollover for Cooperating Operators, Steps 4-6 "><artwork align="center" type="ascii-art">
 ----------------------------------------------------------------
-| signing-migration  | re-delegation II   | post-migration     |
+| signing migration  | old DS removal     | post migration     |
 ----------------------------------------------------------------
 |  Parent:           | Parent:            | Parent:            |
 |                    |                    |                    |
@@ -219,6 +219,7 @@ using mmark by Miek Gieben.  mmark is available at
 <t>grammar and spelling nits</t>
 <t>separate procedural section into subsections</t>
 <t>improve notation explanation</t>
+<t>rename procedure steps for clarity</t>
 </list>
 </t>
 </section>

@@ -94,7 +94,7 @@ the SOA record.
 
 F> ~~~~ ascii-art
 F> ----------------------------------------------------------------
-F> | initial            | pre-publish        | re-delegation I    |
+F> | initial            | pre-publish        | re-delegation      |
 F> ----------------------------------------------------------------
 F> | Parent:            | Parent:            | Parent:            |
 F> |  NS_A              |  NS_A              |                    |
@@ -123,7 +123,7 @@ F> Figure: Rollover for Cooperating Operators, Steps 1-3 {#Steps13}
 
 F> ~~~~ ascii-art
 F> ----------------------------------------------------------------
-F> | signing-migration  | re-delegation II   | post-migration     |
+F> | signing migration  | old DS removal     | post migration     |
 F> ----------------------------------------------------------------
 F> |  Parent:           | Parent:            | Parent:            |
 F> |                    |                    |                    |
@@ -182,6 +182,7 @@ A> [RFC Editor: Please remove this section before publication.]
 - grammar and spelling nits
 - separate procedural section into subsections
 - improve notation explanation
+- rename procedure steps for clarity
 
 ## Version pounsett-01
 

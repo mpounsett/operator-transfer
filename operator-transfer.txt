@@ -171,7 +171,7 @@ Internet-Draft   Change of Operator for Automated Zones      August 2016
 
 
      ----------------------------------------------------------------
-     | initial            | pre-publish        | re-delegation I    |
+     | initial            | pre-publish        | re-delegation      |
      ----------------------------------------------------------------
      | Parent:            | Parent:            | Parent:            |
      |  NS_A              |  NS_A              |                    |
@@ -227,7 +227,7 @@ Internet-Draft   Change of Operator for Automated Zones      August 2016
 
 
      ----------------------------------------------------------------
-     | signing-migration  | re-delegation II   | post-migration     |
+     | signing migration  | old DS removal     | post migration     |
      ----------------------------------------------------------------
      |  Parent:           | Parent:            | Parent:            |
      |                    |                    |                    |
@@ -306,6 +306,8 @@ B.1.  Version pounsett-02 (Unpublished)
 
    o  improve notation explanation
 
+   o  rename procedure steps for clarity
+
 B.2.  Version pounsett-01
 
    o  grammar and spelling nits
@@ -328,8 +330,6 @@ Author's Address
    Rightside Group, Ltd.
 
    Email: matt@conundrum.com
-
-
 
 
 
