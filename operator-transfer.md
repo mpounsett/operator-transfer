@@ -146,7 +146,7 @@ F> Figure: Rollover for Cooperating Operators, Steps 1-3 {#Steps13}
 Signing Migration
 : Once the new (pre-published) DNSKEY records and DS_B are in the caches of
   validating clients the operators can swap signing duties; RRSIG_K_B and
-  RRSIG_Z_B become the active signing keys.  When the ganinig operator begins
+  RRSIG_Z_B become the active signing keys.  When the gaining operator begins
   signing the zone, either they MUST strip the RRSIGs of the losing operator,
   or the losing operator MUST begin producing an unsigned zone.  The operators
   MUST wait at least the largest TTL of any RRSIG in the zone before moving on
@@ -159,7 +159,7 @@ Old DS Removal
 Post Migration
 : After the old DS set has expired from caches the gaining operator may remove
   the losing operator DNSKEYs from the zone.  At this time it is assumed that
-  the gaining operator severs whatever process was transferring zone data from
+  the gaining operator stops whatever process was transferring zone data from
   the losing operator, and the gaining operator begins publishing the zone.
 
 F> ~~~~ ascii-art
@@ -217,6 +217,10 @@ using mmark by Miek Gieben.  mmark is available at
 # Changelist
 
 A> [RFC Editor: Please remove this section before publication.]
+
+## Version pounsett-03 (Unpublished)
+
+- grammar and spelling nits
 
 ## Version pounsett-02
 

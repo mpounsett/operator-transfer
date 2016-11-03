@@ -175,7 +175,7 @@ set before the Signing Migration step can be begun.</t>
 <vspace />
 Once the new (pre-published) DNSKEY records and DS_B are in the caches of
 validating clients the operators can swap signing duties; RRSIG_K_B and
-RRSIG_Z_B become the active signing keys.  When the ganinig operator begins
+RRSIG_Z_B become the active signing keys.  When the gaining operator begins
 signing the zone, either they MUST strip the RRSIGs of the losing operator,
 or the losing operator MUST begin producing an unsigned zone.  The operators
 MUST wait at least the largest TTL of any RRSIG in the zone before moving on
@@ -188,7 +188,7 @@ at least the TTL of the DS set before moving on to the Post Migration step.</t>
 <vspace />
 After the old DS set has expired from caches the gaining operator may remove
 the losing operator DNSKEYs from the zone.  At this time it is assumed that
-the gaining operator severs whatever process was transferring zone data from
+the gaining operator stops whatever process was transferring zone data from
 the losing operator, and the gaining operator begins publishing the zone.</t>
 </list>
 </t>
@@ -260,6 +260,14 @@ using mmark by Miek Gieben.  mmark is available at
 <t>[RFC Editor: Please remove this section before publication.]
 </t>
 </list></t>
+
+<section anchor="version-pounsett03-unpublished" title="Version pounsett-03 (Unpublished)">
+<t>
+<list style="symbols">
+<t>grammar and spelling nits</t>
+</list>
+</t>
+</section>
 
 <section anchor="version-pounsett02" title="Version pounsett-02">
 <t>
