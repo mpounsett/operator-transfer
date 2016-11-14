@@ -145,8 +145,8 @@ F> Figure: Rollover for Cooperating Operators, Steps 1-3 {#Steps13}
 
 Signing Migration
 : Once the new (pre-published) DNSKEY records and DS_B are in the caches of
-  validating clients the operators can swap signing duties; RRSIG_K_B and
-  RRSIG_Z_B become the active signing keys.  When the gaining operator begins
+  validating clients the operators can swap signing duties; DNSKEY_K_B and
+  DNSKEY_Z_B become the active signing keys.  When the gaining operator begins
   signing the zone, either they MUST strip the RRSIGs of the losing operator,
   or the losing operator MUST begin producing an unsigned zone.  The operators
   MUST wait at least the largest TTL of any RRSIG in the zone before moving on
@@ -221,6 +221,7 @@ A> [RFC Editor: Please remove this section before publication.]
 ## Version pounsett-03 (Unpublished)
 
 - grammar and spelling nits
+- fix RRSIG/DNSKEY typo in "Signing Migration" step
 
 ## Version pounsett-02
 
