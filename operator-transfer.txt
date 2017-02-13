@@ -294,8 +294,8 @@ Internet-Draft   Change of Operator for Automated Zones     October 2016
 5.  Normative References
 
    [RFC6781]  Kolkman, O., Mekking, W., and R. Gieben, "DNSSEC
-              Operational Practices, Version 2", RFC 6781,
-              DOI 10.17487/RFC6781, December 2012,
+              Operational Practices, Version 2", RFC 6781, DOI 10.17487/
+              RFC6781, December 2012,
               <http://www.rfc-editor.org/info/rfc6781>.
 
 Appendix A.  Document Source
@@ -360,9 +360,9 @@ Author's Address
 
    Matthew Pounsett
    Rightside Group, Ltd.
+   Toronto, ON
 
    Email: matt@conundrum.com
-
 
 
 

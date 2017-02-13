@@ -18,6 +18,9 @@
 % organization = "Rightside Group, Ltd."
 % 	[author.address]
 %	email = "matt@conundrum.com"
+%   [author.address.postal]
+%   city = "Toronto"
+%   region = "ON"
 %
 
 .# Abstract
