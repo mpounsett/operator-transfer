@@ -68,21 +68,22 @@ Internet-Draft   Change of Operator for Automated Zones     October 2016
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
-   2.  Changing Between Cooperating DNS Operators  . . . . . . . . .   3
-     2.1.  Assumptions . . . . . . . . . . . . . . . . . . . . . . .   3
-     2.2.  Procedure Overview  . . . . . . . . . . . . . . . . . . .   3
-     2.3.  Procedure Notation  . . . . . . . . . . . . . . . . . . .   3
-     2.4.  The Procedure . . . . . . . . . . . . . . . . . . . . . .   3
-   3.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
-   4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
-   5.  Normative References  . . . . . . . . . . . . . . . . . . . .   6
-   Appendix A.  Document Source  . . . . . . . . . . . . . . . . . .   6
-   Appendix B.  Changelist . . . . . . . . . . . . . . . . . . . . .   6
-     B.1.  Version pounsett-03 (Unpublished) . . . . . . . . . . . .   6
-     B.2.  Version pounsett-02 . . . . . . . . . . . . . . . . . . .   6
+   2.  Applicability . . . . . . . . . . . . . . . . . . . . . . . .   3
+   3.  Changing Between Cooperating DNS Operators  . . . . . . . . .   3
+     3.1.  Assumptions . . . . . . . . . . . . . . . . . . . . . . .   3
+     3.2.  Procedure Overview  . . . . . . . . . . . . . . . . . . .   3
+     3.3.  Procedure Notation  . . . . . . . . . . . . . . . . . . .   3
+     3.4.  The Procedure . . . . . . . . . . . . . . . . . . . . . .   4
+   4.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
+   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
+   6.  Normative References  . . . . . . . . . . . . . . . . . . . .   6
+   Appendix A.  Document Source  . . . . . . . . . . . . . . . . . .   7
+   Appendix B.  Changelist . . . . . . . . . . . . . . . . . . . . .   7
+     B.1.  Version pounsett-03 (Unpublished) . . . . . . . . . . . .   7
+     B.2.  Version pounsett-02 . . . . . . . . . . . . . . . . . . .   7
      B.3.  Version pounsett-01 . . . . . . . . . . . . . . . . . . .   7
-     B.4.  Version pounsett-00 . . . . . . . . . . . . . . . . . . .   7
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   7
+     B.4.  Version pounsett-00 . . . . . . . . . . . . . . . . . . .   8
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   8
 
 1.  Introduction
 
@@ -104,8 +105,7 @@ Table of Contents
 
    As a result, it must be assumed that operators moving an
    automatically generated or frequently updated zone must be able to
-   publish an identical zone while transitioning it from one operator to
-   another.
+
 
 
 
@@ -114,9 +114,24 @@ Pounsett                   Expires May 4, 2017                  [Page 2]
 Internet-Draft   Change of Operator for Automated Zones     October 2016
 
 
-2.  Changing Between Cooperating DNS Operators
+   publish an identical zone while transitioning it from one operator to
+   another.
 
-2.1.  Assumptions
+2.  Applicability
+
+   This document is intended for operators intending to transfer
+   operational responsibility for DNSSEC-signed zones, while publishing
+   consistent zone data on both sets of name servers throughout the
+   transition.
+
+   Other procedures exist for operators who are unable to consistently
+   replicate data between both sets of name servers (e.g. through zone
+   transfer) or who do not require this level of zone consistency during
+   the transfer.
+
+3.  Changing Between Cooperating DNS Operators
+
+3.1.  Assumptions
 
    In this scenario, it is assumed that the operators will not exchange
    any private key material, but are otherwise fully cooperative.  It is
@@ -130,7 +145,7 @@ Internet-Draft   Change of Operator for Automated Zones     October 2016
    The transition of the publishing process is out of scope of this
    document.
 
-2.2.  Procedure Overview
+3.2.  Procedure Overview
 
    The DNS operations transition uses a modified pre-publish KSK and ZSK
    rollover, whereby the losing operator pre-publishes the public KSK
@@ -141,19 +156,27 @@ Internet-Draft   Change of Operator for Automated Zones     October 2016
    keys of the losing operator until the TTLs of the original RRSIGs
    expire.
 
-2.3.  Procedure Notation
+3.3.  Procedure Notation
 
    In the timeline below, the losing operator is operator A, and the
    gaining operator is operator B.  Records representing data generated
    by each operator are appended with the operator letter.  DNSKEY
    records are appended with the keytype; DNSKEY_Z is a ZSK, and
+
+
+
+Pounsett                   Expires May 4, 2017                  [Page 3]
+
+Internet-Draft   Change of Operator for Automated Zones     October 2016
+
+
    DNSKEY_K is a KSK.  RRSIGs are appended with the DNSKEY type they
    were generated from, as well as the operator who generated them;
    RRSIGs include in parentheses the RRSET type that they sign.  For
    example, RRSIG_Z_A(SOA) is the RRSIG generated with DNSKEY_Z_A and
    signs the SOA record.
 
-2.4.  The Procedure
+3.4.  The Procedure
 
    The KSK and ZSK rollover from the losing to gaining operator keys
    involves six stages as described in Figure 1 and Figure 2.
@@ -162,13 +185,6 @@ Internet-Draft   Change of Operator for Automated Zones     October 2016
       The initial version of the zone.  This zone is published and
       signed by the losing operator.  During this stage the gaining
       operator should begin serving the zone on its name servers.
-
-
-
-Pounsett                   Expires May 4, 2017                  [Page 3]
-
-Internet-Draft   Change of Operator for Automated Zones     October 2016
-
 
    Pre-Publish
       Operator A begins pre-publishing DNSKEY_K_B and DNSKEY_Z_B.  At
@@ -185,6 +201,30 @@ Internet-Draft   Change of Operator for Automated Zones     October 2016
       MUST wait at least the time it takes for the data to propagate to
       all the parent servers plus the TTL of the DS set before the
       Signing Migration step can be begun.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pounsett                   Expires May 4, 2017                  [Page 4]
+
+Internet-Draft   Change of Operator for Automated Zones     October 2016
+
 
      ----------------------------------------------------------------
      | initial            | pre-publish        | re-delegation      |
@@ -218,14 +258,6 @@ Internet-Draft   Change of Operator for Automated Zones     October 2016
       Once the new (pre-published) DNSKEY records and DS_B are in the
       caches of validating clients the operators can swap signing
       duties; DNSKEY_K_B and DNSKEY_Z_B become the active signing keys.
-
-
-
-Pounsett                   Expires May 4, 2017                  [Page 4]
-
-Internet-Draft   Change of Operator for Automated Zones     October 2016
-
-
       When the gaining operator begins signing the zone, either they
       MUST strip the RRSIGs of the losing operator, or the losing
       operator MUST begin producing an unsigned zone.  The operators
@@ -241,6 +273,15 @@ Internet-Draft   Change of Operator for Automated Zones     October 2016
       After the old DS set has expired from caches the gaining operator
       may remove the losing operator DNSKEYs from the zone.  At this
       time it is assumed that the gaining operator stops whatever
+
+
+
+
+Pounsett                   Expires May 4, 2017                  [Page 5]
+
+Internet-Draft   Change of Operator for Automated Zones     October 2016
+
+
       process was transferring zone data from the losing operator, and
       the gaining operator begins publishing the zone.
 
@@ -272,31 +313,30 @@ Internet-Draft   Change of Operator for Automated Zones     October 2016
 
           Figure 2: Rollover for Cooperating Operators, Steps 4-6
 
-
-
-
-
-
-Pounsett                   Expires May 4, 2017                  [Page 5]
-
-Internet-Draft   Change of Operator for Automated Zones     October 2016
-
-
-3.  Security Considerations
+4.  Security Considerations
 
    This document raises no new security considerations.  Please see
    Section 6 of [RFC6781].
 
-4.  IANA Considerations
+5.  IANA Considerations
 
    This document has no actions for IANA.
 
-5.  Normative References
+6.  Normative References
 
    [RFC6781]  Kolkman, O., Mekking, W., and R. Gieben, "DNSSEC
               Operational Practices, Version 2", RFC 6781, DOI 10.17487/
               RFC6781, December 2012,
               <http://www.rfc-editor.org/info/rfc6781>.
+
+
+
+
+
+Pounsett                   Expires May 4, 2017                  [Page 6]
+
+Internet-Draft   Change of Operator for Automated Zones     October 2016
+
 
 Appendix A.  Document Source
 
@@ -330,14 +370,6 @@ B.2.  Version pounsett-02
 
    o  rename procedure steps for clarity
 
-
-
-
-Pounsett                   Expires May 4, 2017                  [Page 6]
-
-Internet-Draft   Change of Operator for Automated Zones     October 2016
-
-
    o  add prose description of operator key roll
 
 B.3.  Version pounsett-01
@@ -351,6 +383,16 @@ B.3.  Version pounsett-01
    o  added Document Source and Changelist
 
    o  call out publishing migration as out of scope
+
+
+
+
+
+
+Pounsett                   Expires May 4, 2017                  [Page 7]
+
+Internet-Draft   Change of Operator for Automated Zones     October 2016
+
 
 B.4.  Version pounsett-00
 
@@ -389,4 +431,18 @@ Author's Address
 
 
 
-Pounsett                   Expires May 4, 2017                  [Page 7]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pounsett                   Expires May 4, 2017                  [Page 8]

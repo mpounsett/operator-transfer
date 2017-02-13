@@ -75,6 +75,17 @@ while transitioning it from one operator to another.
 </t>
 </section>
 
+<section anchor="applicability" title="Applicability">
+<t>This document is intended for operators intending to transfer operational
+responsibility for DNSSEC-signed zones, while publishing consistent zone data
+on both sets of name servers throughout the transition.
+</t>
+<t>Other procedures exist for operators who are unable to consistently replicate
+data between both sets of name servers (e.g. through zone transfer) or who do
+not require this level of zone consistency during the transfer.
+</t>
+</section>
+
 <section anchor="changing-between-cooperating-dns-operators" title="Changing Between Cooperating DNS Operators">
 
 <section anchor="assumptions" title="Assumptions">

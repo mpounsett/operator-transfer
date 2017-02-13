@@ -57,6 +57,16 @@ As a result, it must be assumed that operators moving an automatically
 generated or frequently updated zone must be able to publish an identical zone
 while transitioning it from one operator to another.
 
+# Applicability
+
+This document is intended for operators intending to transfer operational
+responsibility for DNSSEC-signed zones, while publishing consistent zone data
+on both sets of name servers throughout the transition.  
+
+Other procedures exist for operators who are unable to consistently replicate
+data between both sets of name servers (e.g. through zone transfer) or who do
+not require this level of zone consistency during the transfer.
+
 # Changing Between Cooperating DNS Operators
 
 ## Assumptions
