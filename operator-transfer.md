@@ -49,6 +49,8 @@ Other procedures exist for operators who are unable to consistently replicate da
 
 In this scenario, it is assumed that the operators will not exchange any private key material, but are otherwise fully cooperative.  It is also assumed that the zone publishing process will be transferred between operators independently of the DNS operations.  The simplest case is to transition the publishing process after the DNS operations move has been completed, and is the order that is assumed in this document, although the reverse order is possible.  During the transition, the losing operator will provide the zone contents to the gaining operator by some automatic means (typically zone transfer).  The transition of the publishing process is out of scope of this document.
 
+The gaining and losing operator in this procedure MUST be using the same algorithms to sign the zone.  If the gaining operator wishes to use a different algorithm than the losing operator, she MUST do a separate algorithm rollover (see [!@RFC6781] section 4.1.4) after this transfer is complete.
+
 ## Procedure Overview
 
 The DNS operations transition uses a modified pre-publish KSK and ZSK rollover, whereby the losing operator pre-publishes the public KSK and ZSK of the gaining operator.  Part way through the transition, the losing operator stops signing the zone and begins providing an unsecure zone to the gaining operator, who begins signing.  Once that is done, the gaining operator continues to post-publish the public keys of the losing operator until the TTLs of the original RRSIGs expire.
@@ -158,6 +160,10 @@ The XML and TXT versions of this document are generated from Markdown using mmar
 # Changelist
 
 A> [RFC Editor: Please remove this section before publication.]
+
+## Version pounsett-04 (Unpublished)
+
+- added same-algo assumption/rollovers comment (Carl Clements)
 
 ## Version pounsett-03
 
