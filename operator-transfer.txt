@@ -4,13 +4,13 @@
 
 Network Working Group                                        M. Pounsett
 Internet-Draft                                     Rightside Group, Ltd.
-Updates: 6781 (if approved)                             October 31, 2016
+Updates: 6781 (if approved)                           September 13, 2017
 Intended status: Informational
-Expires: May 4, 2017
+Expires: March 17, 2018
 
 
  Change of Operator Procedures for Automatically Published DNSSEC Zones
-         draft-pounsett-transferring-automated-dnssec-zones-02
+         draft-pounsett-transferring-automated-dnssec-zones-03
 
 Abstract
 
@@ -40,11 +40,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on May 4, 2017.
+   This Internet-Draft will expire on March 17, 2018.
 
 Copyright Notice
 
-   Copyright (c) 2016 IETF Trust and the persons identified as the
+   Copyright (c) 2017 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Pounsett                   Expires May 4, 2017                  [Page 1]
+Pounsett                 Expires March 17, 2018                 [Page 1]
 
-Internet-Draft   Change of Operator for Automated Zones     October 2016
+Internet-Draft   Change of Operator for Automated Zones   September 2017
 
 
    publication of this document.  Please review these documents
@@ -79,7 +79,7 @@ Table of Contents
    6.  Normative References  . . . . . . . . . . . . . . . . . . . .   6
    Appendix A.  Document Source  . . . . . . . . . . . . . . . . . .   7
    Appendix B.  Changelist . . . . . . . . . . . . . . . . . . . . .   7
-     B.1.  Version pounsett-03 (Unpublished) . . . . . . . . . . . .   7
+     B.1.  Version pounsett-03 . . . . . . . . . . . . . . . . . . .   7
      B.2.  Version pounsett-02 . . . . . . . . . . . . . . . . . . .   7
      B.3.  Version pounsett-01 . . . . . . . . . . . . . . . . . . .   7
      B.4.  Version pounsett-00 . . . . . . . . . . . . . . . . . . .   8
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Pounsett                   Expires May 4, 2017                  [Page 2]
+Pounsett                 Expires March 17, 2018                 [Page 2]
 
-Internet-Draft   Change of Operator for Automated Zones     October 2016
+Internet-Draft   Change of Operator for Automated Zones   September 2017
 
 
    publish an identical zone while transitioning it from one operator to
@@ -165,9 +165,9 @@ Internet-Draft   Change of Operator for Automated Zones     October 2016
 
 
 
-Pounsett                   Expires May 4, 2017                  [Page 3]
+Pounsett                 Expires March 17, 2018                 [Page 3]
 
-Internet-Draft   Change of Operator for Automated Zones     October 2016
+Internet-Draft   Change of Operator for Automated Zones   September 2017
 
 
    DNSKEY_K is a KSK.  RRSIGs are appended with the DNSKEY type they
@@ -221,9 +221,9 @@ Internet-Draft   Change of Operator for Automated Zones     October 2016
 
 
 
-Pounsett                   Expires May 4, 2017                  [Page 4]
+Pounsett                 Expires March 17, 2018                 [Page 4]
 
-Internet-Draft   Change of Operator for Automated Zones     October 2016
+Internet-Draft   Change of Operator for Automated Zones   September 2017
 
 
      ----------------------------------------------------------------
@@ -277,9 +277,9 @@ Internet-Draft   Change of Operator for Automated Zones     October 2016
 
 
 
-Pounsett                   Expires May 4, 2017                  [Page 5]
+Pounsett                 Expires March 17, 2018                 [Page 5]
 
-Internet-Draft   Change of Operator for Automated Zones     October 2016
+Internet-Draft   Change of Operator for Automated Zones   September 2017
 
 
       process was transferring zone data from the losing operator, and
@@ -325,17 +325,17 @@ Internet-Draft   Change of Operator for Automated Zones     October 2016
 6.  Normative References
 
    [RFC6781]  Kolkman, O., Mekking, W., and R. Gieben, "DNSSEC
-              Operational Practices, Version 2", RFC 6781, DOI 10.17487/
-              RFC6781, December 2012,
-              <http://www.rfc-editor.org/info/rfc6781>.
+              Operational Practices, Version 2", RFC 6781,
+              DOI 10.17487/RFC6781, December 2012, <https://www.rfc-
+              editor.org/info/rfc6781>.
 
 
 
 
 
-Pounsett                   Expires May 4, 2017                  [Page 6]
+Pounsett                 Expires March 17, 2018                 [Page 6]
 
-Internet-Draft   Change of Operator for Automated Zones     October 2016
+Internet-Draft   Change of Operator for Automated Zones   September 2017
 
 
 Appendix A.  Document Source
@@ -354,7 +354,7 @@ Appendix B.  Changelist
 
       [RFC Editor: Please remove this section before publication.]
 
-B.1.  Version pounsett-03 (Unpublished)
+B.1.  Version pounsett-03
 
    o  grammar and spelling nits
 
@@ -389,9 +389,9 @@ B.3.  Version pounsett-01
 
 
 
-Pounsett                   Expires May 4, 2017                  [Page 7]
+Pounsett                 Expires March 17, 2018                 [Page 7]
 
-Internet-Draft   Change of Operator for Automated Zones     October 2016
+Internet-Draft   Change of Operator for Automated Zones   September 2017
 
 
 B.4.  Version pounsett-00
@@ -403,6 +403,7 @@ Author's Address
    Matthew Pounsett
    Rightside Group, Ltd.
    Toronto, ON
+   Canada
 
    Email: matt@conundrum.com
 
@@ -444,5 +445,4 @@ Author's Address
 
 
 
-
-Pounsett                   Expires May 4, 2017                  [Page 8]
+Pounsett                 Expires March 17, 2018                 [Page 8]

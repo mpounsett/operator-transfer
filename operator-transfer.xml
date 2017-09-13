@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE rfc SYSTEM 'rfc2629.dtd' []>
-<rfc ipr="trust200902" category="info" docName="draft-pounsett-transferring-automated-dnssec-zones-02" updates="6781">
+<rfc ipr="trust200902" category="info" docName="draft-pounsett-transferring-automated-dnssec-zones-03" updates="6781">
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
 <?rfc sortrefs="yes"?>
@@ -19,7 +19,7 @@
 <street></street>
 <city>Toronto</city>
 <code></code>
-<country></country>
+<country>Canada</country>
 <region>ON</region>
 </postal>
 <phone></phone>
@@ -27,7 +27,7 @@
 <uri></uri>
 </address>
 </author>
-<date year="2016" month="October" day="31"/>
+<date year="2017" month="September" day="13"/>
 
 <area>OPS</area>
 <workgroup></workgroup>
@@ -248,7 +248,7 @@ Section 6 of <xref target="RFC6781"/>.
 </middle>
 <back>
 <references title="Normative References">
-<?rfc include="http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6781.xml"?>
+<?rfc include="https://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.6781.xml"?>
 </references>
 
 <section anchor="document-source" title="Document Source">
@@ -272,7 +272,7 @@ using mmark by Miek Gieben.  mmark is available at
 </t>
 </list></t>
 
-<section anchor="version-pounsett03-unpublished" title="Version pounsett-03 (Unpublished)">
+<section anchor="version-pounsett03" title="Version pounsett-03">
 <t>
 <list style="symbols">
 <t>grammar and spelling nits</t>

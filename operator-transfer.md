@@ -1,26 +1,26 @@
 % Title = "Change of Operator Procedures for Automatically Published DNSSEC Zones"
 % abbrev = "Change of Operator for Automated Zones"
 % category = "info"
-% docName = "draft-pounsett-transferring-automated-dnssec-zones-02"
+% docName = "draft-pounsett-transferring-automated-dnssec-zones-03"
 % ipr = "trust200902"
 % area = "OPS"
 % workgroup = ""
 % keyword = ["dnssec", "operator", "procedures"]
 % updates = [6781]
 %
-% date = 2016-10-31T00:00:00Z
+% date = 2017-09-13T00:00:00Z
 %
 % [[author]]
 % initials = "M."
 % surname = "Pounsett"
 % fullname = "Matthew Pounsett"
-% role="author"
 % organization = "Rightside Group, Ltd."
 % 	[author.address]
 %	email = "matt@conundrum.com"
 %   [author.address.postal]
 %   city = "Toronto"
 %   region = "ON"
+%   country = "Canada"
 %
 
 .# Abstract
@@ -231,7 +231,7 @@ using mmark by Miek Gieben.  mmark is available at
 
 A> [RFC Editor: Please remove this section before publication.]
 
-## Version pounsett-03 (Unpublished)
+## Version pounsett-03
 
 - grammar and spelling nits
 - fix RRSIG/DNSKEY typo in "Signing Migration" step
