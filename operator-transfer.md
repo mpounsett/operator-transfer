@@ -25,107 +25,50 @@
 
 .# Abstract
 
-Section 4.3.5.1 of [@!RFC6781] "DNSSEC Operational Practices, version 2"
-describes a procedure for transitioning a DNSSEC signed zone from one
-(cooperative) operator to another.  The procedure works well in many
-situations, but makes the assumption that it is feasible for the two operators
-to simultaneously publish slightly different versions of the zone being
-transferred.  In some cases, such as with TLD registries, operational
-considerations require both operators to publish identical versions of the
-zone for the duration of the transition.  This document describes a modified
-transition procedure which can be used in these cases.
+Section 4.3.5.1 of [@!RFC6781] "DNSSEC Operational Practices, version 2" describes a procedure for transitioning a DNSSEC signed zone from one (cooperative) operator to another.  The procedure works well in many situations, but makes the assumption that it is feasible for the two operators to simultaneously publish slightly different versions of the zone being transferred.  In some cases, such as with TLD registries, operational considerations require both operators to publish identical versions of the zone for the duration of the transition.  This document describes a modified transition procedure which can be used in these cases.
 
 {mainmatter}
 
 # Introduction
 
-The process described in "DNSSEC Operational Practices, version 2"
-([@!RFC6781]), section 4.3.5.1 for cooperating DNS operators to move a DNSSEC
-signed zone cannot be followed in all cases.  When operators are moving a zone
-that is automatically published and/or changes rapidly, such as with a TLD or
-any other zone published from a registration database, it may not be feasible
-for the operators to publish different versions of the same zone.
+The process described in "DNSSEC Operational Practices, version 2" ([@!RFC6781]), section 4.3.5.1 for cooperating DNS operators to move a DNSSEC signed zone cannot be followed in all cases.  When operators are moving a zone that is automatically published and/or changes rapidly, such as with a TLD or any other zone published from a registration database, it may not be feasible for the operators to publish different versions of the same zone.
 
-In these cases, it would be necessary for one or both operators to have the
-capability to add, remove, or alter arbitrary records inline along the zone
-transfer path (such as modifying the NSSet, and stripping RRSIGs).  It cannot
-be assumed that this capability exists, since few (if any) common DNS
-implementations include these functions, and many custom implementations exist
-whose feature sets cannot be predicted.
+In these cases, it would be necessary for one or both operators to have the capability to add, remove, or alter arbitrary records inline along the zone transfer path (such as modifying the NSSet, and stripping RRSIGs).  It cannot be assumed that this capability exists, since few (if any) common DNS implementations include these functions, and many custom implementations exist whose feature sets cannot be predicted.
 
-As a result, it must be assumed that operators moving an automatically
-generated or frequently updated zone must be able to publish an identical zone
-while transitioning it from one operator to another.
+As a result, it must be assumed that operators moving an automatically generated or frequently updated zone must be able to publish an identical zone while transitioning it from one operator to another.
 
 # Applicability
 
-This document is intended for operators intending to transfer operational
-responsibility for DNSSEC-signed zones, while publishing consistent zone data
-on both sets of name servers throughout the transition.  
+This document is intended for operators intending to transfer operational responsibility for DNSSEC-signed zones, while publishing consistent zone data on both sets of name servers throughout the transition.  
 
-Other procedures exist for operators who are unable to consistently replicate
-data between both sets of name servers (e.g. through zone transfer) or who do
-not require this level of zone consistency during the transfer.
+Other procedures exist for operators who are unable to consistently replicate data between both sets of name servers (e.g. through zone transfer) or who do not require this level of zone consistency during the transfer.
 
 # Changing Between Cooperating DNS Operators
 
 ## Assumptions
 
-In this scenario, it is assumed that the operators will not exchange any
-private key material, but are otherwise fully cooperative.  It is also assumed
-that the zone publishing process will be transferred between operators
-independently of the DNS operations.  The simplest case is to transition the
-publishing process after the DNS operations move has been completed, and is
-the order that is assumed in this document, although the reverse order is
-possible.  During the transition, the losing operator will provide the zone
-contents to the gaining operator by some automatic means (typically zone
-transfer).  The transition of the publishing process is out of scope of this
-document.
+In this scenario, it is assumed that the operators will not exchange any private key material, but are otherwise fully cooperative.  It is also assumed that the zone publishing process will be transferred between operators independently of the DNS operations.  The simplest case is to transition the publishing process after the DNS operations move has been completed, and is the order that is assumed in this document, although the reverse order is possible.  During the transition, the losing operator will provide the zone contents to the gaining operator by some automatic means (typically zone transfer).  The transition of the publishing process is out of scope of this document.
 
 ## Procedure Overview
 
-The DNS operations transition uses a modified pre-publish KSK and ZSK
-rollover, whereby the losing operator pre-publishes the public KSK and ZSK of
-the gaining operator.  Part way through the transition, the losing operator
-stops signing the zone and begins providing an unsecure zone to the gaining
-operator, who begins signing.  Once that is done, the gaining operator
-continues to post-publish the public keys of the losing operator until the
-TTLs of the original RRSIGs expire.
+The DNS operations transition uses a modified pre-publish KSK and ZSK rollover, whereby the losing operator pre-publishes the public KSK and ZSK of the gaining operator.  Part way through the transition, the losing operator stops signing the zone and begins providing an unsecure zone to the gaining operator, who begins signing.  Once that is done, the gaining operator continues to post-publish the public keys of the losing operator until the TTLs of the original RRSIGs expire.
 
 ## Procedure Notation
 
-In the timeline below, the losing operator is operator A, and the gaining
-operator is operator B.  Records representing data generated by each operator
-are appended with the operator letter.  DNSKEY records are appended with the
-keytype;  DNSKEY_Z is a ZSK, and DNSKEY_K is a KSK.  RRSIGs are appended with
-the DNSKEY type they were generated from, as well as the operator who
-generated them; RRSIGs include in parentheses the RRSET type that they sign.
-For example, RRSIG_Z_A(SOA) is the RRSIG generated with DNSKEY_Z_A and signs
-the SOA record.
+In the timeline below, the losing operator is operator A, and the gaining operator is operator B.  Records representing data generated by each operator are appended with the operator letter.  DNSKEY records are appended with the keytype;  DNSKEY_Z is a ZSK, and DNSKEY_K is a KSK.  RRSIGs are appended with the DNSKEY type they were generated from, as well as the operator who generated them; RRSIGs include in parentheses the RRSET type that they sign.  For example, RRSIG_Z_A(SOA) is the RRSIG generated with DNSKEY_Z_A and signs the SOA record.
 
 ## The Procedure
 
-The KSK and ZSK rollover from the losing to gaining operator keys involves six
-stages as described in (#Steps13) and (#Steps46).
+The KSK and ZSK rollover from the losing to gaining operator keys involves six stages as described in (#Steps13) and (#Steps46).
 
 Initial
-: The initial version of the zone.  This zone is published and signed by the
-  losing operator.  During this stage the gaining operator should begin
-  serving the zone on its name servers.
+: The initial version of the zone.  This zone is published and signed by the losing operator.  During this stage the gaining operator should begin serving the zone on its name servers.
 
 Pre-Publish
-: Operator A begins pre-publishing DNSKEY_K_B and DNSKEY_Z_B.  At the same
-  time, the NS set at the apex of the zone is changed to NS_B to begin moving
-  traffic to the gaining name servers.  The operators MUST wait at least the
-  time it takes for the data to propagate to all authoritative servers plus
-  the TTL of the DNSKEY set before the Signing Migration step can be begun.
+: Operator A begins pre-publishing DNSKEY_K_B and DNSKEY_Z_B.  At the same time, the NS set at the apex of the zone is changed to NS_B to begin moving traffic to the gaining name servers.  The operators MUST wait at least the time it takes for the data to propagate to all authoritative servers plus the TTL of the DNSKEY set before the Signing Migration step can be begun.
 
 Re-Delegation
-: The parent changes the prent NS set to be NS_B, to match the NS set at the
-  apex of the child zone.  The parent also begins publishing the DS record for
-  the gaining operator.  The operators MUST wait at least the time it takes
-  for the data to propagate to all the parent servers plus the TTL of the DS
-  set before the Signing Migration step can be begun.
+: The parent changes the prent NS set to be NS_B, to match the NS set at the apex of the child zone.  The parent also begins publishing the DS record for the gaining operator.  The operators MUST wait at least the time it takes for the data to propagate to all the parent servers plus the TTL of the DS set before the Signing Migration step can be begun.
 
 F> ~~~~ ascii-art
 F> ----------------------------------------------------------------
@@ -157,23 +100,13 @@ F> ~~~~
 F> Figure: Rollover for Cooperating Operators, Steps 1-3 {#Steps13}
 
 Signing Migration
-: Once the new (pre-published) DNSKEY records and DS_B are in the caches of
-  validating clients the operators can swap signing duties; DNSKEY_K_B and
-  DNSKEY_Z_B become the active signing keys.  When the gaining operator begins
-  signing the zone, either they MUST strip the RRSIGs of the losing operator,
-  or the losing operator MUST begin producing an unsigned zone.  The operators
-  MUST wait at least the largest TTL of any RRSIG in the zone before moving on
-  to the Old DS Removal step.
+: Once the new (pre-published) DNSKEY records and DS_B are in the caches of validating clients the operators can swap signing duties; DNSKEY_K_B and DNSKEY_Z_B become the active signing keys.  When the gaining operator begins signing the zone, either they MUST strip the RRSIGs of the losing operator, or the losing operator MUST begin producing an unsigned zone.  The operators MUST wait at least the largest TTL of any RRSIG in the zone before moving on to the Old DS Removal step.
 
 Old DS Removal
-: The parent now removes the old DS_A from its zone.  The operators MUST wait
-  at least the TTL of the DS set before moving on to the Post Migration step.
+: The parent now removes the old DS_A from its zone.  The operators MUST wait at least the TTL of the DS set before moving on to the Post Migration step.
 
 Post Migration
-: After the old DS set has expired from caches the gaining operator may remove
-  the losing operator DNSKEYs from the zone.  At this time it is assumed that
-  the gaining operator stops whatever process was transferring zone data from
-  the losing operator, and the gaining operator begins publishing the zone.
+: After the old DS set has expired from caches the gaining operator may remove the losing operator DNSKEYs from the zone.  At this time it is assumed that the gaining operator stops whatever process was transferring zone data from the losing operator, and the gaining operator begins publishing the zone.
 
 F> ~~~~ ascii-art
 F> ----------------------------------------------------------------
@@ -206,8 +139,7 @@ F> Figure: Rollover for Cooperating Operators, Steps 4-6 {#Steps46}
 
 # Security Considerations
 
-This document raises no new security considerations.  Please see
-Section 6 of [@!RFC6781].
+This document raises no new security considerations.  Please see Section 6 of [@!RFC6781].
 
 # IANA Considerations
 
@@ -219,13 +151,9 @@ This document has no actions for IANA.
 
 A> [RFC Editor: Please remove this section before publication.]
 
-This document is maintained at Github at
-<https://github.com/mpounsett/operator-transfer>.  Issue reports and pull
-requests are gratefully accepted here. 
+This document is maintained at Github at <https://github.com/mpounsett/operator-transfer>.  Issue reports and pull requests are gratefully accepted here. 
 
-The XML and TXT versions of this document are generated from Markdown
-using mmark by Miek Gieben.  mmark is available at
-<https://github.com/miekg/mmark>.
+The XML and TXT versions of this document are generated from Markdown using mmark by Miek Gieben.  mmark is available at <https://github.com/miekg/mmark>.
 
 # Changelist
 
