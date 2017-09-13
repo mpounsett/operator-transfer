@@ -70,7 +70,7 @@ Pre-Publish
 : Operator A begins pre-publishing DNSKEY_K_B and DNSKEY_Z_B.  At the same time, the NS set at the apex of the zone is changed to NS_B to begin moving traffic to the gaining name servers.  The operators MUST wait at least the time it takes for the data to propagate to all authoritative servers plus the TTL of the DNSKEY set before the Signing Migration step can be begun.
 
 Re-Delegation
-: The parent changes the prent NS set to be NS_B, to match the NS set at the apex of the child zone.  The parent also begins publishing the DS record for the gaining operator.  The operators MUST wait at least the time it takes for the data to propagate to all the parent servers plus the TTL of the DS set before the Signing Migration step can be begun.
+: The parent changes the parent NS set to be NS_B, to match the NS set at the apex of the child zone.  The parent also begins publishing the DS record for the gaining operator.  The operators MUST wait at least the time it takes for the data to propagate to all the parent servers plus the TTL of the DS set before the Signing Migration step can be begun.
 
 F> ~~~~ ascii-art
 F> ----------------------------------------------------------------
@@ -163,6 +163,7 @@ A> [RFC Editor: Please remove this section before publication.]
 
 ## Version pounsett-04 (Unpublished)
 
+- grammar and spelling nits
 - added same-algo assumption/rollovers comment (Carl Clements)
 
 ## Version pounsett-03

@@ -201,7 +201,7 @@ Internet-Draft   Change of Operator for Automated Zones   September 2017
       set before the Signing Migration step can be begun.
 
    Re-Delegation
-      The parent changes the prent NS set to be NS_B, to match the NS
+      The parent changes the parent NS set to be NS_B, to match the NS
       set at the apex of the child zone.  The parent also begins
       publishing the DS record for the gaining operator.  The operators
       MUST wait at least the time it takes for the data to propagate to
@@ -356,6 +356,8 @@ Appendix B.  Changelist
 
 B.1.  Version pounsett-04 (Unpublished)
 
+   o  grammar and spelling nits
+
    o  added same-algo assumption/rollovers comment (Carl Clements)
 
 B.2.  Version pounsett-03
@@ -384,8 +386,6 @@ B.4.  Version pounsett-01
 
    o  added IANA Considerations section
 
-   o  added Document Source and Changelist
-
 
 
 
@@ -393,6 +393,8 @@ Pounsett                 Expires March 17, 2018                 [Page 7]
 
 Internet-Draft   Change of Operator for Automated Zones   September 2017
 
+
+   o  added Document Source and Changelist
 
    o  call out publishing migration as out of scope
 
@@ -408,8 +410,6 @@ Author's Address
    Canada
 
    Email: matt@conundrum.com
-
-
 
 
 
